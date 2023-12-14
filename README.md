@@ -1,8 +1,8 @@
-# Red Bull Racing Team Hackathon README
+# Red Bull Racing Team Data Project 1
 
 ## Project Name: AccelerateX
 
-Welcome to the Red Bull Racing Team's winning project for the [Hackathon Name]! 🏎️🚀
+Welcome to the Red Bull Racing Team's winning project for the Data Project 1! 🏎️🚀
 
 ### Overview
 
