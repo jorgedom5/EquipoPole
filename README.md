@@ -1,6 +1,8 @@
-# Red Bull Racing Team Data Project 1
+# Red Bull Racing Team -- Data Project 1
 
 ## Viajes Imserso
+
+![redbull.png](https://cdn-1.motorsport.com/images/mgl/Y99JQRbY/s8/red-bull-racing-logo-1.jpg)
 
 Welcome to the Red Bull Racing Team's winning project for the Data Project 1! 🏎️🚀
 
@@ -33,8 +35,10 @@ AccelerateX is a cutting-edge solution designed to revolutionize the world of Fo
 ### Technologies Used
 
 - Python
-- TensorFlow for machine learning
-- React for the frontend
-- WebSocket for real-time communication
-- ARKit for Augmented Reality
+- Docker
+- SQL
+- Tableau
+
+  ### Overall Idea
+![schema](https://github.com/jorgedom5/EquipoPole/assets/148787367/4ad18cf9-7e83-49e9-b1ad-f5d26d34fbf6)
 
