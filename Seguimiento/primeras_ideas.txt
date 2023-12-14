@@ -28,6 +28,14 @@ Posibles variables:
 •	Religión
 •	Fumador
 •	género
+• Nivel educativo
+• Afiliación política
+• Voluntariado
+• Grado de independencia
+• Preferencia por destinos históricos o modernos
+• Preferencia por destinos de playa o montaña
+• Experiencia en programas de ejercicios físicos
+• Participación en programas culturales locales
 
 Viajes:
 •	Destino 
@@ -38,6 +46,7 @@ Viajes:
 •	Cuantos van a hacer ese viaje
 •	Lugar de origen
 •	Tipo de pensión
+
 
 
 
