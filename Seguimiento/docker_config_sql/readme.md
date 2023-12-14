@@ -15,5 +15,4 @@
 DE MOMENTO NO HAY MÁS
 
 VIDEO TUTORIAL:
-<iframe width="560" height="315" src="https://www.youtube.com/watch?v=uKlRp6CqpDg&t=675s&ab_channel=FaztCode" frameborder="0" allowfullscreen></iframe>
 URL: https://www.youtube.com/watch?v=uKlRp6CqpDg&t=675s&ab_channel=FaztCode
