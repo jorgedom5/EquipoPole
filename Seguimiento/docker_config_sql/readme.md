@@ -16,3 +16,23 @@ DE MOMENTO NO HAY MÁS
 
 VIDEO TUTORIAL:
 URL: https://www.youtube.com/watch?v=uKlRp6CqpDg&t=675s&ab_channel=FaztCode
+
+
+## UNA VEZ EN PGADMIN U OTRAS
+
+### PARA GUARDAR BASE DE DATOS EN LOCAL
+- PASO 1
+  
+![Alt text](image-1.png)
+
+Lo de Jubilados no saldrá, darle encima de Databases y luego 'Restore'
+- PASO 2
+  
+![Alt text](image-2.png)
+
+Le dais a la carpeta de la derecha de Filename
+- PASO 3
+  
+![Alt text](image-3.png)
+
+Buscáis la ruta donde está el archivo .sql, cambiad el fileformat de bajo a la derecha
