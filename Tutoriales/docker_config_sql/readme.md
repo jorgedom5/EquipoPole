@@ -36,3 +36,9 @@ Le dais a la carpeta de la derecha de Filename
 ![Alt text](image-3.png)
 
 Buscáis la ruta donde está el archivo .sql, cambiad el fileformat de bajo a la derecha
+
+- PASO 4
+
+Trabajar, TODO LO QUE SE HAGA TIENE QUE ESTAR DENTRO DEL SCRIPT .sql para pepo
+
+PARA IMPORTAR DESDE UN CSV MIRAD EL VIDEO: https://www.youtube.com/watch?v=Ikd2xSb00UI&ab_channel=BhaskarReddyPulsani
