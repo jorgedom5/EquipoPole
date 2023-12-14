@@ -1,14 +1,8 @@
--- ESTA ES DE PRUEBA, NO HACED CASO
-
--- DROP DATABASE IF EXISTS jubilados;
-
-CREATE DATABASE jubilados
-    WITH
-    OWNER = root
-    ENCODING = 'UTF8'
-    LC_COLLATE = 'en_US.utf8'
-    LC_CTYPE = 'en_US.utf8'
-    LOCALE_PROVIDER = 'libc'
-    TABLESPACE = pg_default
-    CONNECTION LIMIT = -1
-    IS_TEMPLATE = False;
+CREATE TABLE IF NOT EXISTS public.jubilados (
+    jubilado_id int NULL,
+    nombre varchar(50) NULL,
+    apellido varchar(50) NULL,
+    edad int NULL,
+    años_tributados int NULL,
+    pension_anual int NULL
+);

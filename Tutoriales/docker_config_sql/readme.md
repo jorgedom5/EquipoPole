@@ -41,4 +41,12 @@ Buscáis la ruta donde está el archivo .sql, cambiad el fileformat de bajo a la
 
 Trabajar, TODO LO QUE SE HAGA TIENE QUE ESTAR DENTRO DEL SCRIPT .sql para pepo
 
+- PARA ABRIR UN SCRIPT
+  
+  ![Alt text](image-4.png)
+
+Click derecho sobre en panel de la izquierda y escribís código .sql, por ejemplo:
+![Alt text](image-5.png)
+
+
 PARA IMPORTAR DESDE UN CSV MIRAD EL VIDEO: https://www.youtube.com/watch?v=Ikd2xSb00UI&ab_channel=BhaskarReddyPulsani
