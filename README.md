@@ -1,6 +1,6 @@
 # Red Bull Racing Team Data Project 1
 
-## Project Name: AccelerateX
+## Viajes Imserso
 
 Welcome to the Red Bull Racing Team's winning project for the Data Project 1! 🏎️🚀
 
