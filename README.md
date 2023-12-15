@@ -6,41 +6,38 @@
 
 Welcome to the Red Bull Racing Team's winning project for the Data Project 1! 🏎️🚀
 
-### Overview
+## Overview
 
-## Why Red Bull Racing Team?
+### Why Red Bull Racing Team?
 
-### 1. **Proven Track Record in Data Analytics**
+1. **Proven Track Record in Data Analytics**
+   - Success in Formula 1 with a data-driven approach.
 
-Red Bull Racing Team has a rich history of utilizing data analytics to gain a competitive edge in Formula 1 racing. Our data-driven approach has consistently delivered exceptional results on the track, showcasing our ability to extract meaningful insights from vast datasets.
+2. **State-of-the-Art Technology Stack**
+   - Advanced tools, ML, and cloud infrastructure for efficient data handling.
 
-### 2. **State-of-the-Art Technology Stack**
+3. **Innovation and Continuous Improvement**
+   - Thriving on innovation for optimal outcomes.
 
-Our team employs a state-of-the-art technology stack, combining advanced analytics tools, machine learning algorithms, and cloud computing infrastructure. This allows us to handle large datasets efficiently and extract valuable information to make informed decisions.
+4. **Cross-Disciplinary Team of Experts**
+   - Diverse experts ensuring a holistic approach to the IMSERSO Data Project.
 
-### 3. **Innovation and Continuous Improvement**
-
-Just as in Formula 1, where innovation is key to success, our team thrives on pushing the boundaries of what's possible in the data analytics field. We are committed to continuous improvement, staying at the forefront of technological advancements to deliver the best possible outcomes for our projects.
-
-### 4. **Cross-Disciplinary Team of Experts**
-
-Our team consists of experts from diverse backgrounds, including data scientists, engineers, and domain specialists. This cross-disciplinary approach enables us to bring a holistic perspective to the IMSERSO Data Project, ensuring that both technical and human factors are considered in the filtering process.
-
-### 5. **Commitment to Social Impact**
-
-Beyond our success on the racetrack, Red Bull Racing Team is committed to making a positive impact on society. The IMSERSO Data Project aligns with our values of contributing to the well-being of communities. We approach this project with a sense of responsibility and dedication to creating positive outcomes for the elderly.
+5. **Commitment to Social Impact**
+   - Aligning values with community well-being.
 
 ## Project Goals
 
-The primary goals of the IMSERSO Data Project are:
+1. **Efficient Filtering:**
+   - Develop a robust system for IMSERSO group eligibility.
 
-1. **Efficient Filtering:** Develop a robust filtering system to identify eligible individuals for IMSERSO groups based on relevant criteria.
+2. **User-Centric Design:**
+   - Ensure a friendly experience for users and administrators.
 
-2. **User-Centric Design:** Ensure a user-friendly experience for both the elderly individuals and IMSERSO administrators involved in the selection process.
+3. **Data Security and Privacy:**
+   - Implement measures for rigorous data protection.
 
-3. **Data Security and Privacy:** Implement rigorous measures to safeguard the privacy and security of the data collected during the filtering process.
-
-4. **Optimization Through Feedback:** Establish a feedback loop to continuously optimize the filtering algorithm based on user feedback and changing requirements.
+4. **Optimization Through Feedback:**
+   - Continuous improvement based on user feedback.
 
 ### Technologies Used
 
@@ -49,6 +46,7 @@ The primary goals of the IMSERSO Data Project are:
 - SQL
 - Tableau
 
+
   ### Overall Idea
-![schema](https://github.com/jorgedom5/EquipoPole/assets/148787367/4ad18cf9-7e83-49e9-b1ad-f5d26d34fbf6)
+[![SCHEMA.png](https://i.postimg.cc/j2CR7SCW/SCHEMA.png)](https://postimg.cc/y34qqBmB)
 
