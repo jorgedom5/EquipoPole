@@ -47,6 +47,9 @@ Welcome to the Red Bull Racing Team's winning project for the Data Project 1! ðŸ
 - Tableau
 
 
-  ### Overall Idea
+### Overall Idea
 [![SCHEMA.png](https://i.postimg.cc/j2CR7SCW/SCHEMA.png)](https://postimg.cc/y34qqBmB)
+
+### SQL SCHEMA
+[![SQL.png](https://i.postimg.cc/8zrWQ1pm/SQL.png)](https://postimg.cc/75wbSrT5)
 
