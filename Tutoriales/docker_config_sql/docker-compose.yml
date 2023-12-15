@@ -10,7 +10,7 @@ services:
       - DATABASE_HOST=127.0.0.1
       - POSTGRES_USER=root
       - POSTGRES_PASSWORD=root
-      - POSTGRESS_DB=root
+      - POSTGRESS_DB=jubilados
 
   pgadmin:
     image: dpage/pgadmin4
