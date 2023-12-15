@@ -43,14 +43,14 @@
     •   Participación en programas culturales locales
 
 ### Posibles variables viajes:
-•	Destino 
-•	Tiempo de viaje
-•	Transporte
-•	Época
-•	Tipo de turismo
-•	Cuantos van a hacer ese viaje
-•	Lugar de origen
-•	Tipo de pensión
+    •	Destino 
+    •	Tiempo de viaje
+    •	Transporte
+    •	Época
+    •	Tipo de turismo
+    •	Cuantos van a hacer ese viaje
+    •	Lugar de origen
+    •	Tipo de pensión
 
 
 ## CALENDARIO
