@@ -22,7 +22,7 @@ CREATE table if not EXISTS public.geografico (
 CREATE table if not EXISTS public.viajes (
 	viaje_id SERIAL PRIMARY KEY,
 	nombre_viaje varchar null,
-	geografico_id int NULL,
+	geografico_id int NULL, --ESTA VARIABLE REPRESENTA EL LUGAR DE PARTIDA, EN SUBQUERIES SERÍA GUARDAR COMO AS SALIDA O ALGO ASÍ
 	tipo_viaje varchar null,
 	dias_totales int null,
 	capacidad_viaje int null,
