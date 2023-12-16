@@ -9,3 +9,5 @@ https://www.postgresql.org/docs/8.2/functions-math.html
 https://es.wikipedia.org/wiki/Comunidad_aut%C3%B3noma
 #### USAR LOC CON PANDAS
 https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.loc.html
+#### USAR TO.DICT EN PANDAS
+https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_dict.html
