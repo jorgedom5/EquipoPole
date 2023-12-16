@@ -1,5 +1,5 @@
 # TUTORIAL CREAR DATAFRAME A PARTIR DE SQL CON CÓDIGO PYTHON
-
+El contenedor docker tiene que estar encendido para acceder a la base de datos, mirad ese tutorial primero
 ## Importación de librerías y conexión SQL:
 
 ```python
