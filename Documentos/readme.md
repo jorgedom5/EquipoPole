@@ -1,7 +1,7 @@
-### POSTGRES
+## POSTGRES
 #### POSTGRES CREAR VALORES ALEATORIOS
 https://www.postgresql.org/docs/8.2/functions-math.html
-### PYTHON
+## PYTHON
 #### PSYCOPG DOCUMENTACIÓN SQL CON PYTHON
 https://www.psycopg.org/docs/usage.html#passing-parameters-to-sql-queries
 #### USAR LOC CON PANDAS
@@ -10,7 +10,7 @@ https://www.w3schools.com/python/pandas/ref_df_loc.asp
 #### USAR TO.DICT EN PANDAS
 https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_dict.html
 https://www.w3resource.com/pandas/dataframe/dataframe-to_dict.php
-### IMSERSO
+## IMSERSO
 #### REGIONES PARA PONER EN EL GEOGRÁFICO
 https://es.wikipedia.org/wiki/Comunidad_aut%C3%B3noma
 #### INFO VIAJES IMSERSO
