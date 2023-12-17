@@ -14,7 +14,7 @@ https://www.w3resource.com/pandas/dataframe/dataframe-to_dict.php
 #### REGIONES PARA PONER EN EL GEOGRÁFICO
 https://es.wikipedia.org/wiki/Comunidad_aut%C3%B3noma
 ### INFO VIAJES IMSERSO
-https://imserso.es/documents/20123/101573/preciosti20232024.pdf/7c2c73a2-aa63-7b2f-4aa0-dd814ecd2c13
-https://imserso.es/espacio-mayores/envejecimiento-activo/programa-turismo-imserso/servicios-incluyen-programa
-https://imserso.es/espacio-mayores/envejecimiento-activo/programa-turismo-imserso/modalidades-viaje
-https://www.turismosocial.com/Nuestros-Destinos/Destinos-desde-su-Lugar-de-Salida/Tipo-de-Productos.html
+- https://imserso.es/documents/20123/101573/preciosti20232024.pdf/7c2c73a2-aa63-7b2f-4aa0-dd814ecd2c13
+- https://imserso.es/espacio-mayores/envejecimiento-activo/programa-turismo-imserso/servicios-incluyen-programa
+- https://imserso.es/espacio-mayores/envejecimiento-activo/programa-turismo-imserso/modalidades-viaje
+- https://www.turismosocial.com/Nuestros-Destinos/Destinos-desde-su-Lugar-de-Salida/Tipo-de-Productos.html
