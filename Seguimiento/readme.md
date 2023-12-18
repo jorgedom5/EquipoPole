@@ -67,27 +67,27 @@ Del 28/12/23 hasta el 5/12/23  realizar el power, video…
 numero jubilados : 100.000
 numero de viajes : 150 viajes --> aprox 20 plazas
 
--filtro 1: viajeros de una region solo aplican a viajes que salen de esa región
--filtro 2: personas que no vivien en zona costera tienen 5 puntos más a destinos con zona costera 
--filtro 3: pension anual rango 10963 - 42823 
--filtro 4: años tributados 15 - 42
--filtro 5: nacionalidad --> 0.1
--filtro 6: seguro de vida
--filtro 7: enfermendad --> 5 puntos
-- filtro 8 : estado judicial --> restan -5 puntos
-- filtro 9 : edad --> piramide población
-- filtro 10 : endeudamiento
-- filtra 11: fumador
-- filtro 12: cantidad de hijos
-- filtro 13: familiares a cargo
-- filtro 14: participacion anterior ( en los ultimo dos años) (si / no)
-- filtro 15: estado civil --> viudo más puntos
-- filtro 16: numero de propiedades --> resta
-- filtro 17: discapacidad --> sume puntos
-- filtro 18: viltima de maltrato --> suma puntos
-- filtro 19: participacion en voluntariado --> sumar
-- filtro 20: preferencia de viaje
-- filtro 21: preferencia viaje internacional o nacional
+-filtro 1: viajeros de una region solo aplican a viajes que salen de esa región Jorge
+-filtro 2: personas que no vivien en zona costera tienen 5 puntos más a destinos con zona costera  Yael
+-filtro 3: pension anual rango 10963 - 42823 miguel
+-filtro 4: años tributados 15 - 42 Gabriela
+-filtro 5: nacionalidad --> 0.1 Gabriela
+
+-filtro 7: enfermendad --> 5 puntos Jorge
+- filtro 8 : estado judicial --> restan -5 puntos Miguel
+- filtro 9 : edad --> piramide población Jorge
+- filtro 10 : endeudamiento Jorge
+- filtra 11: fumador Gabriela
+- filtro 12: cantidad de hijos Yael
+- filtro 13: familiares a cargo Yael
+- filtro 14: participacion anterior ( en los ultimo dos años) (si / no) Miguel
+- filtro 15: estado civil --> viudo más puntos Miguel
+- filtro 16: numero de propiedades --> resta Gabriela
+- filtro 17: discapacidad --> sume puntos Yael
+- filtro 18: viltima de maltrato --> suma puntos Miguel
+- filtro 19: participacion en voluntariado --> sumar Gabriela
+- filtro 20: preferencia de viaje Yael
+- filtro 21: preferencia viaje internacional o nacional Jorge
 
                             
 
