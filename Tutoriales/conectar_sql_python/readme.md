@@ -19,8 +19,6 @@ port = "5432"
 
 ### Conectar con Postgres
 ```python
-con = sqlite3.connect("postgres-1.db")
-
 connection_target = psycopg2.connect(
         host=host,
         database=database,
@@ -88,7 +86,7 @@ A partir de aqui ya se puede trabajar con el dataframe
 
 ### Elegimos un viaje al azar y filtramos por lugar de salida de viaje, de forma que obtengamos los que viven ahí
 ```python
-fila_aleatoria = df_viajes.sample(n=1, random_state=42)
+fila_aleatoria = df_viajes.sample(n=1)
 
 # Obtiene el valor de geografico_id del viaje elegido al azar
 geografico_id_aleatorio = fila_aleatoria['geografico_id'].values[0]
