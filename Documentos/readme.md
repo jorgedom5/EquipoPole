@@ -10,6 +10,8 @@ https://www.w3schools.com/python/pandas/ref_df_loc.asp
 #### USAR TO.DICT EN PANDAS
 https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_dict.html
 https://www.w3resource.com/pandas/dataframe/dataframe-to_dict.php
+#### FAKER PYTHON
+https://www.geeksforgeeks.org/python-faker-library/
 ## IMSERSO
 #### REGIONES PARA PONER EN EL GEOGRÁFICO
 https://es.wikipedia.org/wiki/Comunidad_aut%C3%B3noma
