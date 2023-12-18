@@ -2,7 +2,6 @@ import pandas as pd
 import pyodbc as pdb
 import psycopg2
 import numpy as np
-import faker
 
 # CONECTARSE DATAFRAME
 
