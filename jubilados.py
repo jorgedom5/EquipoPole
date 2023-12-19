@@ -33,7 +33,8 @@ def generar_datos():
     return {
         'nombre': nombre_sin_acentos,
         'apellido': fake.last_name(),
-        'genero': genero
+        'genero': genero,
+        'edad': edad
     }
     
 # 5000 filas de datos
