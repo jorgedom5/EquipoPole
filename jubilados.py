@@ -11,9 +11,9 @@ gender_detector = Detector()
 
 def generar_edad():
     prob = fake.random_int(1, 100)
-    if prob <= 20.03: #7.57; 31.03 (0.2439)
+    if prob <= 20.03: #20.03% para 58-64
         return fake.random_int(min=58, max=64)
-    elif prob <= 62.5:  #5.48; 22.47
+    elif prob <= 62.5:  #62.5%-20.03% = 42.47% para 65-69
         return fake.random_int(min=65, max=69)
     elif prob <= 75.55:  #4.72; 19.35
         return fake.random_int(min=70, max=74)
