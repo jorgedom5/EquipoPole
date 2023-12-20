@@ -1,60 +1,60 @@
-ciudad, comunidadAutonoma
-Almeria,Andalucia
-Cadiz,Andalucia
-Cordoba,Andalucia
-Granada,Andalucia
-Huelva,Andalucia
-Jaen,Andalucia
-Malaga,Andalucia
-Sevilla,Andalucia
-Huesca,Aragon
-Teruel,Aragon
-Zaragoza,Aragon
-Oviedo,Principado de Asturias
-Gijon,Principado de Asturias
-Mallorca,Islas Baleares
-Menorca,Islas Baleares
-Ibiza,Islas Baleares
-Formentera,Islas Baleares
-Las Palmas,Canarias
-Santa Cruz de Tenerife,Canarias
-El Hierro,Canarias
-La Gomera,Canarias
-Santander,Cantabria
-Albacete,Castilla-La Mancha
-Ciudad Real,Castilla-La Mancha
-Cuenca,Castilla-La Mancha
-Guadalajara,Castilla-La Mancha
-Toledo,Castilla-La Mancha
-Avila,Castilla y Leon
-Burgos,Castilla y Leon
-Leon,Castilla y Leon
-Palencia,Castilla y Leon
-Salamanca,Castilla y Leon
-Segovia,Castilla y Leon
-Soria,Castilla y Leon
-Valladolid,Castilla y Leon
-Zamora,Castilla y Leon
-Barcelona,Cataluna
-Gerona,Cataluna
-Lerida,Cataluna
-Tarragona,Cataluna
-Alicante,Comunidad Valenciana
-Castellon,Comunidad Valenciana
-Valencia,Comunidad Valenciana
-Badajoz,Extremadura
-Caceres,Extremadura
-La Coruna,Galicia
-Lugo,Galicia
-Orense,Galicia
-Pontevedra,Galicia
-Logrono,La Rioja
-Madrid,Comunidad de Madrid
-Murcia,Region de Murcia
-Cartagena,Region de Murcia
-Pamplona,Comunidad Foral de Navarra
-Alava,Pais Vasco
-Guipuzcoa,Pais Vasco
-Vizcaya,Pais Vasco
-Ceuta,Ceuta
-Melilla,Melilla
+geografico_id,ciudad,comunidadAutonoma
+1,Almeria,Andalucia
+2,Cadiz,Andalucia
+3,Cordoba,Andalucia
+4,Granada,Andalucia
+5,Huelva,Andalucia
+6,Jaen,Andalucia
+7,Malaga,Andalucia
+8,Sevilla,Andalucia
+9,Huesca,Aragon
+10,Teruel,Aragon
+11,Zaragoza,Aragon
+12,Oviedo,Principado de Asturias
+13,Gijon,Principado de Asturias
+14,Mallorca,Islas Baleares
+15,Menorca,Islas Baleares
+16,Ibiza,Islas Baleares
+17,Formentera,Islas Baleares
+18,Las Palmas,Canarias
+19,Santa Cruz de Tenerife,Canarias
+20,El Hierro,Canarias
+21,La Gomera,Canarias
+22,Santander,Cantabria
+23,Albacete,Castilla-La Mancha
+24,Ciudad Real,Castilla-La Mancha
+25,Cuenca,Castilla-La Mancha
+26,Guadalajara,Castilla-La Mancha
+27,Toledo,Castilla-La Mancha
+28,Avila,Castilla y Leon
+29,Burgos,Castilla y Leon
+30,Leon,Castilla y Leon
+31,Palencia,Castilla y Leon
+32,Salamanca,Castilla y Leon
+33,Segovia,Castilla y Leon
+34,Soria,Castilla y Leon
+35,Valladolid,Castilla y Leon
+36,Zamora,Castilla y Leon
+37,Barcelona,Cataluna
+38,Gerona,Cataluna
+39,Lerida,Cataluna
+40,Tarragona,Cataluna
+41,Alicante,Comunidad Valenciana
+42,Castellon,Comunidad Valenciana
+43,Valencia,Comunidad Valenciana
+44,Badajoz,Extremadura
+45,Caceres,Extremadura
+46,La Coruna,Galicia
+47,Lugo,Galicia
+48,Orense,Galicia
+49,Pontevedra,Galicia
+50,Logrono,La Rioja
+51,Madrid,Comunidad de Madrid
+52,Murcia,Region de Murcia
+53,Cartagena,Region de Murcia
+54,Pamplona,Comunidad Foral de Navarra
+55,Alava,Pais Vasco
+56,Guipuzcoa,Pais Vasco
+57,Vizcaya,Pais Vasco
+58,Ceuta,Ceuta
+59,Melilla,Melilla
