@@ -22,6 +22,38 @@ def generar_edad():
         return fake.random_int(min=80, max=84)
     else:  # 4.48
         return fake.random_int(min=85, max=100)
+    
+# FUNCIÓN PARA CREAR HISTORIAL DELITOS POR PORCENTAJES
+def generar_historial_delitos():
+    probabilidad = fake.random_int(1, 100)
+    if probabilidad <= 0.8:
+        return 1
+    elif probabilidad <= 3.8:
+        return 2
+    elif probabilidad <= 4.58:
+        return 3
+    elif probabilidad <= 4.89:
+        return 4
+    else:
+        return 0
+
+#FUNCIÓN PARA CREAR HIJOS POR PORCENTAJES
+def generar_hijos():
+    prob = fake.random_int(1, 100)
+    if prob <= 18.65 :
+        return 0
+    elif prob <= 44.21 :
+        return 1
+    elif prob <= 87.58 :
+        return 2
+    elif prob <= 90.58:
+        return 3
+    elif prob <= 93.58:
+        return 4
+    elif prob <= 96.58:
+        return 5
+    else:
+        return fake.random_int(min=6, max=8)
 
 # AQUÍ PARA CREAR COLUMNAS
 def generar_datos(jubilado_id):
@@ -29,14 +61,20 @@ def generar_datos(jubilado_id):
     nombre_sin_acentos = unidecode(nombre_con_acentos)
     genero = gender_detector.get_gender(nombre_sin_acentos)
     edad = generar_edad()
+    hijos = generar_hijos()
     endeudamiento = fake.random_int(1, 100) <= 18  # Endeudamiento es True el 18% de los casos
+    delitos = generar_historial_delitos()
+    participacion_voluntariado =  fake.random_int(1, 100) <=4.4 # 4% de personas son voluntarias
     return {
         'jubilado_id': jubilado_id,
         'nombre': nombre_sin_acentos,
         'apellido': fake.last_name(),
         'genero': genero,
         'edad': edad,
-        'endeudamiento': endeudamiento
+        'hijos': hijos,
+        'endeudamiento': endeudamiento,
+        'historial_delitos': delitos,
+        'voluntario': participacion_voluntariado
     }
 
 # 5000 filas de datos con 'jubilado_id'
