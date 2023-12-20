@@ -82,5 +82,5 @@ datos = [generar_datos(jubilado_id) for jubilado_id in range(1, 5001)]
 df = pd.DataFrame(datos)
 
 # Guardar el DataFrame en un archivo CSV
-df.to_csv('jubilados.csv', index=False)
+df.to_csv('jubilados_provisional.csv', index=False)
 print('DONE')
