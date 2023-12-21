@@ -180,7 +180,7 @@ def generar_datos_viajes(viajes_id):
 
 # Conectar a la base de datos PostgreSQL
 conn = psycopg2.connect(
-    host="postgres", #SI ES PARA EL DOCKER-COMPOSE, CAMBIAR POR "postgres"
+    host="localhost", #SI ES PARA EL DOCKER-COMPOSE, CAMBIAR POR "postgres"
     database="root",
     user="root",
     password="root",
@@ -233,6 +233,17 @@ cursor.execute("""
     );
 """)
 
+# GEOGRAFICO
+cursor.execute("""
+    DROP TABLE IF EXISTS public.geografico;
+    CREATE TABLE IF NOT EXISTS public.geografico (
+        geografico_id SERIAL PRIMARY KEY,
+        ciudad varchar(50),
+        comunidad_autonoma varchar(50),
+        es_costa BOOLEAN
+    );
+""")
+
 # Commit para aplicar cambios en la base de datos
 conn.commit()
 
@@ -275,6 +286,75 @@ for viajes_id in range(1, 151):
         datos['numero_dias'], datos['transporte_pagado'], datos['mes_id'],
         datos['tipo_hotel_id']
     ))
+    
+#GEOGRAFICO
+cursor.execute("""
+    INSERT INTO public.geografico (geografico_id, ciudad, comunidad_autonoma, es_costa)
+    VALUES
+    (1, 'Almeria', 'Andalucia', true),
+    (2, 'Cadiz', 'Andalucia', true),
+    (3, 'Cordoba', 'Andalucia', false),
+    (4, 'Granada', 'Andalucia', false),
+    (5, 'Huelva', 'Andalucia', true),
+    (6, 'Jaen', 'Andalucia', false),
+    (7, 'Malaga', 'Andalucia', true),
+    (8, 'Sevilla', 'Andalucia', false),
+    (9, 'Huesca', 'Aragon', false),
+    (10, 'Teruel', 'Aragon', false),
+    (11, 'Zaragoza', 'Aragon', false),
+    (12, 'Oviedo', 'Principado de Asturias', false),
+    (13, 'Gijon', 'Principado de Asturias', true),
+    (14, 'Mallorca', 'Islas Baleares', true),
+    (15, 'Menorca', 'Islas Baleares', true),
+    (16, 'Ibiza', 'Islas Baleares', true),
+    (17, 'Formentera', 'Islas Baleares', true),
+    (18, 'Las Palmas', 'Canarias', true),
+    (19, 'Santa Cruz de Tenerife', 'Canarias', true),
+    (20, 'El Hierro', 'Canarias', true),
+    (21, 'La Gomera', 'Canarias', true),
+    (22, 'Santander', 'Cantabria', true),
+    (23, 'Albacete', 'Castilla-La Mancha', false),
+    (24, 'Ciudad Real', 'Castilla-La Mancha', false),
+    (25, 'Cuenca', 'Castilla-La Mancha', false),
+    (26, 'Guadalajara', 'Castilla-La Mancha', false),
+    (27, 'Toledo', 'Castilla-La Mancha', false),
+    (28, 'Avila', 'Castilla y Leon', false),
+    (29, 'Burgos', 'Castilla y Leon', false),
+    (30, 'Leon', 'Castilla y Leon', false),
+    (31, 'Palencia', 'Castilla y Leon', false),
+    (32, 'Salamanca', 'Castilla y Leon', false),
+    (33, 'Segovia', 'Castilla y Leon', false),
+    (34, 'Soria', 'Castilla y Leon', false),
+    (35, 'Valladolid', 'Castilla y Leon', false),
+    (36, 'Zamora', 'Castilla y Leon', false),
+    (37, 'Barcelona', 'Cataluna', true),
+    (38, 'Gerona', 'Cataluna', false),
+    (39, 'Lerida', 'Cataluna', false),
+    (40, 'Tarragona', 'Cataluna', true),
+    (41, 'Alicante', 'Comunidad Valenciana', true),
+    (42, 'Castellon', 'Comunidad Valenciana', true),
+    (43, 'Valencia', 'Comunidad Valenciana', true),
+    (44, 'Badajoz', 'Extremadura', false),
+    (45, 'Caceres', 'Extremadura', false),
+    (46, 'La Coruna', 'Galicia', true),
+    (47, 'Lugo', 'Galicia', true),
+    (48, 'Orense', 'Galicia', true),
+    (49, 'Pontevedra', 'Galicia', true),
+    (50, 'Logrono', 'La Rioja', false),
+    (51, 'Madrid', 'Comunidad de Madrid', false),
+    (52, 'Murcia', 'Region de Murcia', true),
+    (53, 'Cartagena', 'Region de Murcia', true),
+    (54, 'Pamplona', 'Comunidad Foral de Navarra', true),
+    (55, 'Alava', 'Pais Vasco', false),
+    (56, 'Guipuzcoa', 'Pais Vasco', true),
+    (57, 'Vizcaya', 'Pais Vasco', true),
+    (58, 'Ceuta', 'Ceuta', true),
+    (59, 'Melilla', 'Melilla', true),
+    (60, 'Europa', 'Europa', true),
+    (61, 'America', 'America', true),
+    (62, 'Africa', 'Africa', true),
+    (63, 'Oceania', 'Oceania', true);
+""")
 
 # Commit para aplicar cambios en la base de datos
 conn.commit()
