@@ -240,7 +240,7 @@ conn.commit()
 
 #JUBILADOS
 
-for jubilado_id in range(1, 11):
+for jubilado_id in range(1, 100001):
     datos_jubilados = generar_datos_jubilados(jubilado_id)
     cursor.execute("""
         INSERT INTO public.jubilados (
@@ -263,7 +263,7 @@ for jubilado_id in range(1, 11):
     ))
 
 # VIAJES
-for viajes_id in range(1, 5001):
+for viajes_id in range(1, 151):
     datos = generar_datos_viajes(viajes_id)
     cursor.execute("""
         INSERT INTO public.viajes (
