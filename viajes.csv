@@ -1,0 +1,101 @@
+tipo de viaje,comunidad del destino,lugar de destino,dias de estancia,noches de estancia,Tranporte incluido,precio del viaje (€)
+Turismo Cultural,Canarias,Las Palmas de Gran Canaria,6,5,False,293.16
+Turismo de naturaleza,Castilla La-Mancha,Cuenca,5,4,False,286.92
+Capital de Provincia,País Vasco,San Sebastián,4,3,False,124.68
+Capital de Provincia,Melilla,Melilla,4,3,False,124.68
+Turismo Cultural,Asturias,Gijón,6,5,False,293.16
+Turismo de naturaleza,Andalucía,Aguadulce,5,4,False,286.92
+Turismo de naturaleza,País Vasco,Zarautz,5,4,False,286.92
+Turismo de naturaleza,Castilla y León,Ávila,5,4,False,286.92
+Turismo de naturaleza,País Vasco,Zarautz,5,4,False,286.92
+Capital de Provincia,Castilla y León,León,4,3,False,124.68
+Capital de Provincia,Comunidad Valenciana,Valencia,4,3,False,124.68
+Capital de Provincia,Cantabria,Santander,4,3,False,124.68
+Turismo de naturaleza,Asturias,Gijón,5,4,False,286.92
+Turismo de naturaleza,Comunidad Valenciana,Peñíscola,5,4,False,286.92
+Turismo Cultural,Cataluña,Calella,6,5,False,293.16
+Turismo de naturaleza,Andalucía,Sanlúcar de Barrameda,5,4,False,286.92
+Turismo de naturaleza,La Rioja,Haro,5,4,False,286.92
+Turismo Cultural,Cataluña,Castelldefels,6,5,False,293.16
+Turismo de naturaleza,Aragón,Barbastro,5,4,False,286.92
+Capital de Provincia,Cataluña,Girona,4,3,False,124.68
+Capital de Provincia,Castilla y León,Salamanca,4,3,False,124.68
+Turismo Cultural,Cataluña,Salou,6,5,False,293.16
+Capital de Provincia,Aragón,Zaragoza,4,3,False,124.68
+Capital de Provincia,Cataluña,Girona,4,3,False,124.68
+Capital de Provincia,País Vasco,San Sebastián,4,3,False,124.68
+Capital de Provincia,Cantabria,Santander,4,3,False,124.68
+Capital de Provincia,Castilla y León,Zamora,4,3,False,124.68
+Turismo Cultural,Comunidad Valenciana,Benidorm,6,5,False,293.16
+Capital de Provincia,Comunidad Valenciana,Valencia,4,3,False,124.68
+Capital de Provincia,Comunidad Valenciana,Valencia,4,3,False,124.68
+Turismo Cultural,Castilla La-Mancha,Ciudad Real,6,5,False,293.16
+Turismo de naturaleza,Comunidad Valenciana,Peñíscola,5,4,False,286.92
+Turismo de naturaleza,La Rioja,Haro,5,4,False,286.92
+Capital de Provincia,Aragón,Zaragoza,4,3,False,124.68
+Turismo de naturaleza,Castilla y León,Mogarraz,5,4,False,286.92
+Capital de Provincia,Cataluña,Girona,4,3,False,124.68
+Turismo Cultural,Galicia,Ourense,6,5,False,293.16
+Capital de Provincia,Cantabria,Santander,4,3,False,124.68
+Turismo de naturaleza,Comunidad Valenciana,Peñíscola,5,4,False,286.92
+Turismo Cultural,Aragón,Mora de Rubielos,6,5,False,293.16
+Turismo de naturaleza,Castilla y León,Mogarraz,5,4,False,286.92
+Turismo de naturaleza,Andalucía,Aguadulce,5,4,False,286.92
+Turismo de naturaleza,Aragón,Barbastro,5,4,False,286.92
+Capital de Provincia,Galicia,Ourense,4,3,False,124.68
+Turismo de naturaleza,Castilla La-Mancha,Hellín,5,4,False,286.92
+Capital de Provincia,Cataluña,Girona,4,3,False,124.68
+Capital de Provincia,Castilla y León,Burgos,4,3,False,124.68
+Capital de Provincia,Cataluña,Girona,4,3,False,124.68
+Turismo Cultural,Murcia,La Manga del Mar Menor,6,5,False,293.16
+Capital de Provincia,País Vasco,San Sebastián,4,3,False,124.68
+Capital de Provincia,Andalucía,Granada,4,3,False,124.68
+Capital de Provincia,Andalucía,Córdoba,4,3,False,124.68
+Turismo Cultural,Cataluña,Reus,6,5,False,293.16
+Turismo de naturaleza,Cantabria,Cabuérniga,5,4,False,286.92
+Turismo Cultural,Comunidad Valenciana,Gandía,6,5,False,293.16
+Capital de Provincia,Comunidad Valenciana,Valencia,4,3,False,124.68
+Capital de Provincia,País Vasco,San Sebastián,4,3,False,124.68
+Turismo Cultural,Extremadura,Cáceres,6,5,False,293.16
+Turismo de naturaleza,La Rioja,Haro,5,4,False,286.92
+Turismo de naturaleza,Canarias,Puerto de la Cruz,5,4,False,286.92
+Turismo Cultural,Aragón,Mora de Rubielos,6,5,False,293.16
+Turismo Cultural,Galicia,Lugo,6,5,False,293.16
+Capital de Provincia,Comunidad Valenciana,Valencia,4,3,False,124.68
+Turismo Cultural,Extremadura,Cáceres,6,5,False,293.16
+Capital de Provincia,País Vasco,San Sebastián,4,3,False,124.68
+Turismo Cultural,Murcia,Águilas,6,5,False,293.16
+Turismo de naturaleza,Galicia,Santiago de Compostela A Coruña,5,4,False,286.92
+Capital de Provincia,Cataluña,Girona,4,3,False,124.68
+Turismo Cultural,Comunidad Foral de Navarra,Pamplona,6,5,False,293.16
+Turismo Cultural,Madrid,Pinto,6,5,False,293.16
+Capital de Provincia,Comunidad Valenciana,Valencia,4,3,False,124.68
+Turismo Cultural,Canarias,Las Palmas de Gran Canaria,6,5,False,293.16
+Capital de Provincia,Ceuta,Ceuta,4,3,False,124.68
+Capital de Provincia,Melilla,Melilla,4,3,False,124.68
+Capital de Provincia,Ceuta,Ceuta,4,3,False,124.68
+Turismo Cultural,Asturias,Oviedo,6,5,False,293.16
+Turismo de naturaleza,Madrid,San Lorenzo del Escorial,5,4,False,286.92
+Capital de Provincia,Melilla,Melilla,4,3,False,124.68
+Turismo de naturaleza,Madrid,San Lorenzo del Escorial,5,4,False,286.92
+Turismo Cultural,Extremadura,Trujillo,6,5,False,293.16
+Capital de Provincia,Castilla-La Mancha,Toledo,4,3,False,124.68
+Capital de Provincia,Andalucía,Sevilla,4,3,False,124.68
+Turismo de naturaleza,Baleares,Palma de Mallorca,5,4,False,286.92
+Capital de Provincia,Castilla y León,Salamanca,4,3,False,124.68
+Turismo de naturaleza,Galicia,Santiago de Compostela A Coruña,5,4,False,286.92
+Turismo de naturaleza,Asturias,Gijón,5,4,False,286.92
+Capital de Provincia,Cantabria,Santander,4,3,False,124.68
+Turismo de naturaleza,Galicia,Santiago de Compostela A Coruña,5,4,False,286.92
+Capital de Provincia,Galicia,Ourense,4,3,False,124.68
+Turismo Cultural,Murcia,La Manga del Mar Menor,6,5,False,293.16
+Capital de Provincia,Cantabria,Santander,4,3,False,124.68
+Turismo Cultural,Comunidad Valenciana,Benidorm,6,5,False,293.16
+Capital de Provincia,Cataluña,Girona,4,3,False,124.68
+Turismo de naturaleza,País Vasco,Zarautz,5,4,False,286.92
+Capital de Provincia,Comunidad Valenciana,Valencia,4,3,False,124.68
+Turismo Cultural,Andalucía,Albolote,6,5,False,293.16
+Capital de Provincia,Andalucía,Sevilla,4,3,False,124.68
+Turismo Cultural,Andalucía,Sanlúcar la Mayor,6,5,False,293.16
+Turismo de naturaleza,Extremadura,Trujillo,5,4,False,286.92
+Turismo Cultural,Galicia,Haro,6,5,False,293.16
