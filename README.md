@@ -4,7 +4,7 @@
 
 ![redbull.png](https://cdn-1.motorsport.com/images/mgl/Y99JQRbY/s8/red-bull-racing-logo-1.jpg)
 
-Welcome to the Red Bull Racing Team's winning project for the Data Project 1! 🏎️🚀
+Welcome to the Red Bull Racing Team's winning project for Data Project 1! 🏎️🚀
 
 ## Overview
 
@@ -46,6 +46,10 @@ Welcome to the Red Bull Racing Team's winning project for the Data Project 1! �
 - SQL
 - Tableau
 
+To apply this project, use the following command:
+```bash
+docker-compose up
+```
 
 ### Overall Idea
 [![SCHEMA.png](https://i.postimg.cc/j2CR7SCW/SCHEMA.png)](https://postimg.cc/y34qqBmB)
