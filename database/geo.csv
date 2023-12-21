@@ -1,63 +1,63 @@
 geografico_id,ciudad,comunidadAutonoma,es_costa
 1,Almeria,Andalucia,true
-2,Cadiz,Andalucia,
-3,Cordoba,Andalucia,
-4,Granada,Andalucia
-5,Huelva,Andalucia
-6,Jaen,Andalucia
-7,Malaga,Andalucia
-8,Sevilla,Andalucia
-9,Huesca,Aragon
-10,Teruel,Aragon
-11,Zaragoza,Aragon
+2,Cadiz,Andalucia,true
+3,Cordoba,Andalucia,false
+4,Granada,Andalucia,false
+5,Huelva,Andalucia,true
+6,Jaen,Andalucia,false
+7,Malaga,Andalucia,true
+8,Sevilla,Andalucia,false
+9,Huesca,Aragon,false
+10,Teruel,Aragon,fasle
+11,Zaragoza,Aragon,false
 12,Oviedo,Principado de Asturias
 13,Gijon,Principado de Asturias
-14,Mallorca,Islas Baleares
-15,Menorca,Islas Baleares
-16,Ibiza,Islas Baleares
-17,Formentera,Islas Baleares
-18,Las Palmas,Canarias
-19,Santa Cruz de Tenerife,Canarias
-20,El Hierro,Canarias
-21,La Gomera,Canarias
-22,Santander,Cantabria
-23,Albacete,Castilla-La Mancha
-24,Ciudad Real,Castilla-La Mancha
-25,Cuenca,Castilla-La Mancha
-26,Guadalajara,Castilla-La Mancha
-27,Toledo,Castilla-La Mancha
-28,Avila,Castilla y Leon
-29,Burgos,Castilla y Leon
-30,Leon,Castilla y Leon
-31,Palencia,Castilla y Leon
-32,Salamanca,Castilla y Leon
-33,Segovia,Castilla y Leon
-34,Soria,Castilla y Leon
-35,Valladolid,Castilla y Leon
-36,Zamora,Castilla y Leon
-37,Barcelona,Cataluna
-38,Gerona,Cataluna
-39,Lerida,Cataluna
-40,Tarragona,Cataluna
-41,Alicante,Comunidad Valenciana
-42,Castellon,Comunidad Valenciana
-43,Valencia,Comunidad Valenciana
-44,Badajoz,Extremadura
-45,Caceres,Extremadura
-46,La Coruna,Galicia
-47,Lugo,Galicia
-48,Orense,Galicia
-49,Pontevedra,Galicia
-50,Logrono,La Rioja
-51,Madrid,Comunidad de Madrid
-52,Murcia,Region de Murcia
+14,Mallorca,Islas Baleares,true
+15,Menorca,Islas Baleares,true
+16,Ibiza,Islas Baleares,true
+17,Formentera,Islas Baleares,true
+18,Las Palmas,Canarias,true
+19,Santa Cruz de Tenerife,Canarias,true
+20,El Hierro,Canarias,true
+21,La Gomera,Canarias,true
+22,Santander,Cantabria,true
+23,Albacete,Castilla-La Mancha,false
+24,Ciudad Real,Castilla-La Mancha,false
+25,Cuenca,Castilla-La Mancha,false
+26,Guadalajara,Castilla-La Mancha,fasle
+27,Toledo,Castilla-La Mancha,false
+28,Avila,Castilla y Leon,false
+29,Burgos,Castilla y Leon,false
+30,Leon,Castilla y Leon,false
+31,Palencia,Castilla y Leon,false
+32,Salamanca,Castilla y Leon,false
+33,Segovia,Castilla y Leon,false
+34,Soria,Castilla y Leon,false
+35,Valladolid,Castilla y Leon,false
+36,Zamora,Castilla y Leon,false
+37,Barcelona,Cataluna,true
+38,Gerona,Cataluna,false
+39,Lerida,Cataluna,false
+40,Tarragona,Cataluna,true
+41,Alicante,Comunidad Valenciana,true
+42,Castellon,Comunidad Valenciana,true
+43,Valencia,Comunidad Valenciana,true
+44,Badajoz,Extremadura,false
+45,Caceres,Extremadura,false
+46,La Coruna,Galicia,true
+47,Lugo,Galicia,true
+48,Orense,Galicia,true
+49,Pontevedra,Galicia,true
+50,Logrono,La Rioja,false
+51,Madrid,Comunidad de Madrid,false
+52,Murcia,Region de Murcia,true
 53,Cartagena,Region de Murcia
-54,Pamplona,Comunidad Foral de Navarra
-55,Alava,Pais Vasco
-56,Guipuzcoa,Pais Vasco
-57,Vizcaya,Pais Vasco
-58,Ceuta,Ceuta
-59,Melilla,Melilla
+54,Pamplona,Comunidad Foral de Navarra,true
+55,Alava,Pais Vasco,false
+56,Guipuzcoa,Pais Vasco,true
+57,Vizcaya,Pais Vasco,true
+58,Ceuta,Ceuta,true
+59,Melilla,Melilla,true
 60,Europa,Europa
 61,America,America
 62,Africa,Africa
