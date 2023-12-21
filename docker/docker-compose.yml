@@ -1,0 +1,24 @@
+version: "latest"
+
+services:
+  db:
+    image: postgres
+    restart: always
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql 
+    environment:
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=root
+      - POSTGRES_DB=root
+
+  python:
+    image: python
+    restart: always
+    #volumes:
+      #- ./your_python_code_directory:/app  # Replace with the path to your Python code
+    #command: bash -c "pip install -r requirements.txt && python your_script.py"  # Replace with your actual startup command
+
+volumes:
+  db:
