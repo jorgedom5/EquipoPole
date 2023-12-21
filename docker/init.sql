@@ -40,3 +40,27 @@ values
 ('Albergue'),
 ('Apartamento'),
 ('Casa rural');
+
+create table if not exists historial(
+	tipo_historial_id serial primary key,
+	historial varchar(50) not null );
+	
+insert into historial (historial)
+values
+('no tiene delitos'),
+('Falta'),
+('Leve'),
+('Grave'),
+('Muy grave');
+
+create table if not exists discapacidad(
+	tipo_discapacidad_id serial primary key,
+	tipo_discapacidad varchar(50) not null);
+
+insert into discapacidad (tipo_discapacidad)
+values
+('grado 0'),
+('grado 1'),
+('grado 2'),
+('grado 3'),
+('grado 4');
