@@ -1,7 +1,7 @@
-geografico_id,ciudad,comunidadAutonoma
-1,Almeria,Andalucia
-2,Cadiz,Andalucia
-3,Cordoba,Andalucia
+geografico_id,ciudad,comunidadAutonoma,es_costa
+1,Almeria,Andalucia,true
+2,Cadiz,Andalucia,
+3,Cordoba,Andalucia,
 4,Granada,Andalucia
 5,Huelva,Andalucia
 6,Jaen,Andalucia
@@ -58,3 +58,7 @@ geografico_id,ciudad,comunidadAutonoma
 57,Vizcaya,Pais Vasco
 58,Ceuta,Ceuta
 59,Melilla,Melilla
+60,Europa,Europa
+61,America,America
+62,Africa,Africa
+63,Oceania,Oceania
