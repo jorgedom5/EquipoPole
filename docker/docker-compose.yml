@@ -15,7 +15,7 @@ services:
 
   python:
     image: python
-    restart: always
+    restart: no
     volumes:
       - .:/app  # Mount the entire current directory to /app in the container
     command: bash -c "pip install -r /app/requirements.txt && python /app/main.py"  # Use /app/main.py as the path to the Python script
