@@ -180,7 +180,7 @@ def generar_datos_viajes(viajes_id):
 
 # Conectar a la base de datos PostgreSQL
 conn = psycopg2.connect(
-    host="localhost", #SI ES PARA EL DOCKER-COMPOSE, CAMBIAR POR "postgres"
+    host="postgres", #SI ES PARA EL DOCKER-COMPOSE, CAMBIAR POR "postgres"
     database="root",
     user="root",
     password="root",
