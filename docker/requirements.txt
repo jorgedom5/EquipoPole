@@ -1,2 +1,5 @@
 faker
 psycopg2
+pandas
+gender_guesser.detector
+unidecode
