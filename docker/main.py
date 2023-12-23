@@ -191,6 +191,18 @@ def generar_preferencia_viaje():
       return 3 # Turismo cultural
     else:
       return 4 # Turismo de descanso
+    
+# FUNCIÓN PARA CREAR ENFERMEDADES
+def generar_enfermedades():
+    probabilidad = random.randint(1, 100)
+    if probabilidad <= 25:
+        return 1 #Ninguna
+    elif probabilidad <= 70:
+        return 2 #Leve
+    elif probabilidad <= 85:
+        return 3 #Media
+    else:
+        return 4 #Grave
   
 #TABLA EN SI
 

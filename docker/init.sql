@@ -165,3 +165,16 @@ values
 ('Soltero'),
 ('Casado'),
 ('Viudo');
+
+--TABLA ENFERMEDADES
+drop table if exists public.enfermedades;
+create table public.enfermedades(
+	enfermedad_id serial primary key,
+	enfermedad_nivel varchar(50) not null);
+
+insert into public.enfermedades (enfermedad_nivel)
+values
+('Ninguna'),
+('Leve'),
+('Media'),
+('Grave');
