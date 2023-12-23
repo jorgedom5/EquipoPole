@@ -165,6 +165,7 @@ def generar_datos_viajes(viajes_id):
     transporte_pagado = fake.random_int(1, 100) <= 90
     mes_id = random.randint(1, 12)
     tipo_hotel_id = random.randint(1, 5)
+    numero_plazas =random.randint(10,25)
     return {
         'viajes_id': viajes_id,
         'geografico_id': geografico_id,
@@ -172,7 +173,8 @@ def generar_datos_viajes(viajes_id):
         'numero_dias': numero_dias,
         'transporte_pagado': transporte_pagado,
         'mes_id': mes_id,
-        'tipo_hotel_id': tipo_hotel_id
+        'tipo_residencia_id': tipo_hotel_id,
+        'numero_plazas':numero_plazas
     }
 
 
@@ -229,8 +231,8 @@ cursor.execute("""
         numero_dias INTEGER,
         transporte_pagado BOOLEAN,
         mes_id INTEGER,
-        tipo_hotel_id INTEGER
-    );
+        tipo_residencia_id INTEGER,
+        numero_plazas INTEGER  );
 """)
 
 # Commit para aplicar cambios en la base de datos
@@ -268,12 +270,12 @@ for viajes_id in range(1, 151):
     cursor.execute("""
         INSERT INTO public.viajes (
             viajes_id, geografico_id, tipo_turismo_id, numero_dias,
-            transporte_pagado, mes_id, tipo_hotel_id
-        ) VALUES (%s, %s, %s, %s, %s, %s, %s)
+            transporte_pagado, mes_id, tipo_residencia_id,numero_plazas
+        ) VALUES (%s, %s, %s, %s, %s, %s, %s,%s)
     """, (
         datos['viajes_id'], datos['geografico_id'], datos['tipo_turismo_id'],
         datos['numero_dias'], datos['transporte_pagado'], datos['mes_id'],
-        datos['tipo_hotel_id']
+        datos['tipo_residencia_id'],datos['numero_plazas']
     ))
 
 # Commit para aplicar cambios en la base de datos

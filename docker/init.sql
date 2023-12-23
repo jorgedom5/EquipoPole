@@ -149,3 +149,31 @@ values
 ('Grado 2'),
 ('Grado 3'),
 ('Grado 4');
+
+
+--TABLA ESTADO CIVIL
+drop table if exists public.estado_civil;
+create table if not exists estado_civil(
+	estado_civil_id serial primary key,
+	estado_civil varchar(50) not null);
+	
+insert into estado_civil (estado_civil)
+values
+('Soltero'),
+('Casado'),
+('Viudo');
+
+--TABLA TIPO PENSIONISTA
+drop table if exists public.tipo_pensionista;
+create table if not exists tipo_pensionista(
+	tipo_pensionista_id serial primary key,
+	tipo_pensionista varchar(500) not null);
+	
+insert into tipo_pensionista (tipo_pensionista)
+values
+('Ser pensionista de jubilación del sistema de Seguridad Social español'),
+('Ser pensionista de viudedad del sistema de Seguridad Social español'),
+('Ser pensionista por otros conceptos del sistema de Seguridad Social español o perceptor de prestaciones o subsidios de desempleo'),
+('Ser asegurado o beneficiario del Sistema de la Seguridad Social español'),
+('Españoles residentes en el extranjero siempre que reúnan alguno de los requisitos incluidos en el apartado 1.a). Así, los españoles residentes en Alemania, Andorra, Austria, Bélgica, Dinamarca, Finlandia, Francia, Holanda, Italia, Luxemburgo, Noruega, Portugal, Reino Unido, Suecia y Suiza, podrán tramitarlo en las correspondientes Consejerías de Trabajo, Migraciones y Seguridad Social. '),
+('Españoles de origen emigrantes que hayan retornado a España, siempre que sean pensionistas de los sistemas públicos de Seguridad Social del país o países a los que hubieran emigrado.');
