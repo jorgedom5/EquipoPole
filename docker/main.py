@@ -107,6 +107,69 @@ def generar_discapacidad():
   else:
     return 0
 
+def generar_geografico():
+    prob = fake.random_int(1, 100)
+    if prob <= 17.82:
+        # Regiones de Andalucía
+        return fake.random_int(1, 8)
+    elif prob <= 22.57:
+        # Regiones de Aragón
+        return fake.random_int(9, 11)
+    elif prob <= 26.76:
+        # Regiones de Asturias
+        return fake.random_int(12, 13)
+    elif prob <= 31.57:
+        # Regiones de Islas Baleares
+        return fake.random_int(14, 17)
+    elif prob <= 35.76:
+        # Regiones de Canarias
+        return fake.random_int(18, 21)
+    elif prob <= 38.95:
+        # Regiones de Cantabria
+        return 22
+    elif prob <= 42.14:
+        # Regiones de Castilla-La Mancha
+        return fake.random_int(23, 26)
+    elif prob <= 46.03:
+        # Regiones de Castilla y León
+        return fake.random_int(28, 35)
+    elif prob <= 60.62:
+        # Regiones de Cataluña
+        return fake.random_int(37, 39)
+    elif prob <= 65.81:
+        # Regiones de Comunidad Valenciana
+        return fake.random_int(41, 42)
+    elif prob <= 68.20:
+        # Regiones de Extremadura
+        return 44
+    elif prob <= 70.85:
+        # Regiones de Galicia
+        return fake.random_int(46, 48)
+    elif prob <= 72.14:
+        # Regiones de La Rioja
+        return 50
+    elif prob <= 84.95:
+        # Regiones de Comunidad de Madrid
+        return 51
+    elif prob <= 86.34:
+        # Regiones de Región de Murcia
+        return fake.random_int(52, 52)
+    elif prob <= 89.53:
+        # Regiones de Comunidad Foral de Navarra
+        return 54
+    elif prob <= 92:
+        # Regiones de País Vasco
+        return fake.random_int(55, 57)
+    elif prob <= 97:
+        # Regiones de Ceuta
+        return 58
+    elif prob <= 98:
+        # Regiones de Melilla
+        return 59
+    else:
+        # Regiones de Europa, América, África, Oceania
+        return fake.random_int(60, 63)  
+
 #TABLA EN SI
 
 def generar_datos_jubilados(jubilado_id):
@@ -118,7 +181,7 @@ def generar_datos_jubilados(jubilado_id):
     tipo_pensionista = fake.random_int(1, 6)
     historial_judicial = generar_historial()
     cantidad_hijos = generar_hijos()
-    #lugar_residencia  = generar_lugar_residencia()
+    geografico_id = generar_geografico()
     participacion_voluntariado =  fake.random_int(1, 100) <=30
     estado_civil= generar_estado_civil()
     participacion_anterior=fake.random_int(1,100)<=15
@@ -139,7 +202,7 @@ def generar_datos_jubilados(jubilado_id):
         'tipo_pensionista': tipo_pensionista,
         'historial_judicial' : historial_judicial,
         'cantidad_hijos' : cantidad_hijos,
-        #'Lugar de residencia': lugar_residencia,
+        'geografico_id': geografico_id,
         'participacion_voluntariado' : participacion_voluntariado,
         'estado_civil': estado_civil,
         'participacion_anterior': participacion_anterior,
@@ -208,6 +271,7 @@ cursor.execute("""
         tipo_pensionista INTEGER,
         historial_judicial VARCHAR(255),
         cantidad_hijos INTEGER,
+        geografico_id INTEGER,
         participacion_voluntariado BOOLEAN,
         estado_civil VARCHAR(255),
         participacion_anterior BOOLEAN,
@@ -242,22 +306,24 @@ conn.commit()
 
 #JUBILADOS
 
+#JUBILADOS
+
 for jubilado_id in range(1, 100001):
     datos_jubilados = generar_datos_jubilados(jubilado_id)
     cursor.execute("""
         INSERT INTO public.jubilados (
             jubilado_id, nombre, apellido, genero, edad, endeudamiento,
-            tipo_pensionista, historial_judicial, cantidad_hijos,
+            tipo_pensionista, historial_judicial, cantidad_hijos, geografico_id,
             participacion_voluntariado, estado_civil, participacion_anterior,
             preferencia_internacional, pension_anual, años_tributados,
             maltrato, discapacidad
-        ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+        ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
     """, (
         datos_jubilados['jubilado_id'], datos_jubilados['nombre'],
         datos_jubilados['apellido'], datos_jubilados['genero'],
         datos_jubilados['edad'], datos_jubilados['endeudamiento'],
-        datos_jubilados['tipo_pensionista'], datos_jubilados['historial_judicial'],
-        datos_jubilados['cantidad_hijos'], datos_jubilados['participacion_voluntariado'],
+        datos_jubilados['tipo_pensionista'], datos_jubilados['historial_judicial'], datos_jubilados['cantidad_hijos'],
+        datos_jubilados['geografico_id'], datos_jubilados['participacion_voluntariado'],
         datos_jubilados['estado_civil'], datos_jubilados['participacion_anterior'],
         datos_jubilados['preferencia_internacional'], datos_jubilados['pension_anual'],
         datos_jubilados['años_tributados'], datos_jubilados['maltrato'],
