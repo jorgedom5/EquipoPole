@@ -28,7 +28,9 @@ def generar_edad():
         return fake.random_int(min=80, max=84)
     else:  # 4.48
         return fake.random_int(min=85, max=100)
-    
+ 
+# FUNCIÓN PARA CREAR HISTORIAL DELITOS POR PORCENTAJES   
+
 def generar_historial():
   probabilidad = fake.random_int(1, 100)
   if probabilidad <= 0.8:
@@ -41,6 +43,8 @@ def generar_historial():
     return 5
   else:
     return 1
+
+# FUNCIÓN PARA CREAR NUMERO DE HIJOS POR PORCENTAJES
 
 def generar_hijos():
   prob = fake.random_int(1, 100)
@@ -59,6 +63,8 @@ def generar_hijos():
   else:
     return fake.random_int(min=6, max=8)
 
+# FUNCIÓN PARA CREAR EL ESTADO CIVIL POR PORCENTAJES
+
 def generar_estado_civil():
   prob = fake.random_int(1, 100)
   if prob <=  13.59: #revisar porcentaje dependiendo del viaje
@@ -68,6 +74,7 @@ def generar_estado_civil():
   else:  # revisar porcentaje dependiendo del viaje
     return 3 #VIUDO
 
+# FUNCIÓN PARA CREAR LA PENSIÓN ANUAL POR PORCENTAJES
 def generar_pension_anual():
   prob = fake.random_int(1, 100)
   if prob <= 30:
@@ -80,7 +87,8 @@ def generar_pension_anual():
     return fake.random_int(min=27000, max=32000)
   else:  #
     return fake.random_int(min=32000, max=42823)
-
+  
+# FUNCIÓN PARA CREAR LOS AÑOS TRIBUTADOS POR PORCENTAJES
 def generar_años_tributados():
   prob = fake.random_int(1, 100)
   if prob <= 5:
@@ -96,17 +104,19 @@ def generar_años_tributados():
   else:
     return fake.random_int(min=40, max=44)
 
+# FUNCIÓN PARA CREAR SI HAY DISCAPACIDAD POR PORCENTAJES
 def generar_discapacidad():
   prob = fake.random_int(1, 100)
   if prob <= 4:
-    return 1
-  elif prob <= 11:
     return 2
-  elif prob <=  29:
+  elif prob <= 11:
     return 3
+  elif prob <=  29:
+    return 4
   else:
-    return 0
+    return 1
 
+# FUNCIÓN PARA CREAR LUGARES DONDE RESIDEN POR PORCENTAJES
 def generar_geografico():
     prob = fake.random_int(1, 100)
     if prob <= 17.82:
@@ -186,7 +196,7 @@ def generar_datos_jubilados(jubilado_id):
     estado_civil= generar_estado_civil()
     participacion_anterior=fake.random_int(1,100)<=15
     preferencia_internacional=fake.random_int(1,100)<=20 #True si prefieren viaje internacional el 20% de los casos
-    #fumador = generar_fumador()
+    fumador = fake.random_int(1, 100) <=17 #FUMADOR 17% DE LAS VECES
     #preferencia_viaje = generar_preferencia_viaje()
     pension_anual = generar_pension_anual()
     años_tributados = generar_años_tributados()
@@ -207,7 +217,7 @@ def generar_datos_jubilados(jubilado_id):
         'estado_civil': estado_civil,
         'participacion_anterior': participacion_anterior,
         'preferencia_internacional': preferencia_internacional,
-        #'Fumador': fumador,
+        'fumador': fumador,
         #'Preferencia viaje': preferencia_viaje,
         'pension_anual': pension_anual,
         'años_tributados': años_tributados,
@@ -276,6 +286,7 @@ cursor.execute("""
         estado_civil VARCHAR(255),
         participacion_anterior BOOLEAN,
         preferencia_internacional BOOLEAN,
+        fumador BOOLEAN,
         pension_anual FLOAT,
         años_tributados INTEGER,
         maltrato BOOLEAN,
@@ -315,9 +326,9 @@ for jubilado_id in range(1, 100001):
             jubilado_id, nombre, apellido, genero, edad, endeudamiento,
             tipo_pensionista, historial_judicial, cantidad_hijos, geografico_id,
             participacion_voluntariado, estado_civil, participacion_anterior,
-            preferencia_internacional, pension_anual, años_tributados,
+            preferencia_internacional, fumador, pension_anual, años_tributados,
             maltrato, discapacidad
-        ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+        ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
     """, (
         datos_jubilados['jubilado_id'], datos_jubilados['nombre'],
         datos_jubilados['apellido'], datos_jubilados['genero'],
@@ -325,7 +336,7 @@ for jubilado_id in range(1, 100001):
         datos_jubilados['tipo_pensionista'], datos_jubilados['historial_judicial'], datos_jubilados['cantidad_hijos'],
         datos_jubilados['geografico_id'], datos_jubilados['participacion_voluntariado'],
         datos_jubilados['estado_civil'], datos_jubilados['participacion_anterior'],
-        datos_jubilados['preferencia_internacional'], datos_jubilados['pension_anual'],
+        datos_jubilados['preferencia_internacional'], datos_jubilados['fumador'], datos_jubilados['pension_anual'],
         datos_jubilados['años_tributados'], datos_jubilados['maltrato'],
         datos_jubilados['discapacidad']
     ))
