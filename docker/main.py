@@ -195,11 +195,11 @@ def generar_preferencia_viaje():
 # FUNCIÓN PARA CREAR ENFERMEDADES
 def generar_enfermedades():
     probabilidad = random.randint(1, 100)
-    if probabilidad <= 25:
+    if probabilidad <= 27:
         return 1 #Ninguna
-    elif probabilidad <= 70:
+    elif probabilidad <= 71:
         return 2 #Leve
-    elif probabilidad <= 85:
+    elif probabilidad <= 88:
         return 3 #Media
     else:
         return 4 #Grave
@@ -225,6 +225,7 @@ def generar_datos_jubilados(jubilado_id):
     años_tributados = generar_años_tributados()
     maltrato = fake.random_int(1, 100) <= 1
     discapacidad = generar_discapacidad()
+    enfermedad = generar_enfermedades()
     return {
         'jubilado_id': jubilado_id,
         'nombre': nombre_sin_acentos,
@@ -244,7 +245,8 @@ def generar_datos_jubilados(jubilado_id):
         'pension_anual': pension_anual,
         'años_tributados': años_tributados,
         'maltrato': maltrato,
-        'tipo_discapacidad_id': discapacidad
+        'tipo_discapacidad_id': discapacidad,
+        'enfermedad_id': enfermedad
 
     }
 
@@ -312,7 +314,8 @@ cursor.execute("""
         pension_anual FLOAT,
         años_tributados INTEGER,
         maltrato BOOLEAN,
-        tipo_discapacidad_id INTEGER
+        tipo_discapacidad_id INTEGER,
+        enfermedad_id INTEGER
     );
 """)
 
@@ -349,8 +352,8 @@ for jubilado_id in range(1, 100001):
             historial_judicial_id, cantidad_hijos, geografico_id,
             participacion_voluntariado, estado_civil_id, participacion_anterior,
             preferencia_internacional, fumador, tipo_turismo_id, pension_anual, años_tributados,
-            maltrato, tipo_discapacidad_id
-        ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+            maltrato, tipo_discapacidad_id, enfermedad_id
+        ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
     """, (
         datos_jubilados['jubilado_id'], datos_jubilados['nombre'],
         datos_jubilados['apellido'], datos_jubilados['genero'],
@@ -360,7 +363,7 @@ for jubilado_id in range(1, 100001):
         datos_jubilados['estado_civil_id'], datos_jubilados['participacion_anterior'],
         datos_jubilados['preferencia_internacional'], datos_jubilados['fumador'], datos_jubilados['tipo_turismo_id'], datos_jubilados['pension_anual'],
         datos_jubilados['años_tributados'], datos_jubilados['maltrato'],
-        datos_jubilados['tipo_discapacidad_id']
+        datos_jubilados['tipo_discapacidad_id'], datos_jubilados['enfermedad_id']
     ))
 
 # VIAJES
@@ -409,6 +412,9 @@ FOREIGN KEY (tipo_residencia_id) REFERENCES public.tipo_residencia(tipo_residenc
 
 ALTER TABLE public.viajes ADD CONSTRAINT viajes_mes 
 FOREIGN KEY (mes_id) REFERENCES public.mes(mes_id);
+
+ALTER TABLE public.jubilados ADD CONSTRAINT jubilados_enfermedad 
+FOREIGN KEY (enfermedad_id) REFERENCES public.enfermedades(enfermedad_id);
 """)
 
 conn.commit()
