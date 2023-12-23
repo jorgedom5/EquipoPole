@@ -203,6 +203,24 @@ def generar_enfermedades():
         return 3 #Media
     else:
         return 4 #Grave
+
+#FUNCIÓN PARA CREAR NUMERO DE PROPIEDADES POR PORCENTAJES  
+def generar_numero_propiedades(): #realizado actual
+    prob = fake.random_int(1, 100)
+    if prob <= 45 :
+        return 1
+    elif prob <= 85 :
+        return 2
+    elif prob <= 88 :
+        return 3
+    elif prob <= 91:
+        return 4
+    elif prob <= 94:
+        return 5
+    elif prob <= 97:
+        return 6
+    else:
+        return 0
   
 #TABLA EN SI
 
@@ -226,6 +244,7 @@ def generar_datos_jubilados(jubilado_id):
     maltrato = fake.random_int(1, 100) <= 1
     discapacidad = generar_discapacidad()
     enfermedad = generar_enfermedades()
+    numero_propiedades = generar_numero_propiedades()
     return {
         'jubilado_id': jubilado_id,
         'nombre': nombre_sin_acentos,
@@ -246,7 +265,8 @@ def generar_datos_jubilados(jubilado_id):
         'años_tributados': años_tributados,
         'maltrato': maltrato,
         'tipo_discapacidad_id': discapacidad,
-        'enfermedad_id': enfermedad
+        'enfermedad_id': enfermedad,
+        'numero_propiedades': numero_propiedades
 
     }
 
