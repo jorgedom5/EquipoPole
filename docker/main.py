@@ -388,6 +388,15 @@ FOREIGN KEY (historial_judicial_id) REFERENCES public.historial_judicial(histori
 
 ALTER TABLE public.jubilados ADD CONSTRAINT jubilados_preferencias 
 FOREIGN KEY (tipo_turismo_id) REFERENCES public.tipo_turismo(tipo_turismo_id);
+
+ALTER TABLE public.viajes ADD CONSTRAINT viajes_tipoturismo 
+FOREIGN KEY (tipo_turismo_id) REFERENCES public.tipo_turismo(tipo_turismo_id);
+
+ALTER TABLE public.viajes ADD CONSTRAINT viajes_tiporesidencia 
+FOREIGN KEY (tipo_residencia_id) REFERENCES public.tipo_residencia(tipo_residencia_id);
+
+ALTER TABLE public.viajes ADD CONSTRAINT viajes_mes 
+FOREIGN KEY (mes_id) REFERENCES public.mes(mes_id);
 """)
 
 conn.commit()
