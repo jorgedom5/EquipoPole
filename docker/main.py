@@ -244,7 +244,7 @@ def generar_datos_jubilados(jubilado_id):
 
 #crear datos dentro de la tabla
 def generar_datos_viajes(viajes_id):
-    geografico_id = random.randint(1, 64)
+    geografico_id = random.randint(1, 63)
     tipo_turismo_id = random.randint(1, 4)
     numero_dias = random.randint(4, 10)
     transporte_pagado = fake.random_int(1, 100) <= 90
