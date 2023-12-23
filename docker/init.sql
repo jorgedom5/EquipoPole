@@ -1,19 +1,98 @@
-create table if not exists tipo_turismo(
+--TABLA GEOGRAFICO
+DROP TABLE IF EXISTS public.geografico;
+CREATE TABLE IF NOT EXISTS public.geografico (
+    geografico_id SERIAL PRIMARY KEY,
+    ciudad varchar(50),
+    comunidad_autonoma varchar(50),
+    es_costa BOOLEAN
+);
+
+INSERT INTO public.geografico (ciudad, comunidad_autonoma, es_costa)
+    VALUES
+    ('Almeria', 'Andalucia', true),
+    ('Cadiz', 'Andalucia', true),
+    ('Cordoba', 'Andalucia', false),
+    ('Granada', 'Andalucia', false),
+    ('Huelva', 'Andalucia', true),
+    ('Jaen', 'Andalucia', false),
+    ('Malaga', 'Andalucia', true),
+    ('Sevilla', 'Andalucia', false),
+    ('Huesca', 'Aragon', false),
+    ('Teruel', 'Aragon', false),
+    ('Zaragoza', 'Aragon', false),
+    ('Oviedo', 'Principado de Asturias', false),
+    ('Gijon', 'Principado de Asturias', true),
+    ('Mallorca', 'Islas Baleares', true),
+    ('Menorca', 'Islas Baleares', true),
+    ('Ibiza', 'Islas Baleares', true),
+    ('Formentera', 'Islas Baleares', true),
+    ('Las Palmas', 'Canarias', true),
+    ('Santa Cruz de Tenerife', 'Canarias', true),
+    ('El Hierro', 'Canarias', true),
+    ('La Gomera', 'Canarias', true),
+    ('Santander', 'Cantabria', true),
+    ('Albacete', 'Castilla-La Mancha', false),
+    ('Ciudad Real', 'Castilla-La Mancha', false),
+    ('Cuenca', 'Castilla-La Mancha', false),
+    ('Guadalajara', 'Castilla-La Mancha', false),
+    ('Toledo', 'Castilla-La Mancha', false),
+    ('Avila', 'Castilla y Leon', false),
+    ('Burgos', 'Castilla y Leon', false),
+    ('Leon', 'Castilla y Leon', false),
+    ('Palencia', 'Castilla y Leon', false),
+    ('Salamanca', 'Castilla y Leon', false),
+    ('Segovia', 'Castilla y Leon', false),
+    ('Soria', 'Castilla y Leon', false),
+    ('Valladolid', 'Castilla y Leon', false),
+    ('Zamora', 'Castilla y Leon', false),
+    ('Barcelona', 'Cataluna', true),
+    ('Gerona', 'Cataluna', false),
+    ('Lerida', 'Cataluna', false),
+    ('Tarragona', 'Cataluna', true),
+    ('Alicante', 'Comunidad Valenciana', true),
+    ('Castellon', 'Comunidad Valenciana', true),
+    ('Valencia', 'Comunidad Valenciana', true),
+    ('Badajoz', 'Extremadura', false),
+    ('Caceres', 'Extremadura', false),
+    ('La Coruna', 'Galicia', true),
+    ('Lugo', 'Galicia', true),
+    ('Orense', 'Galicia', true),
+    ('Pontevedra', 'Galicia', true),
+    ('Logrono', 'La Rioja', false),
+    ('Madrid', 'Comunidad de Madrid', false),
+    ('Murcia', 'Region de Murcia', true),
+    ('Cartagena', 'Region de Murcia', true),
+    ('Pamplona', 'Comunidad Foral de Navarra', true),
+    ('Alava', 'Pais Vasco', false),
+    ('Guipuzcoa', 'Pais Vasco', true),
+    ('Vizcaya', 'Pais Vasco', true),
+    ('Ceuta', 'Ceuta', true),
+    ('Melilla', 'Melilla', true),
+    ('Europa', 'Europa', true),
+    ('America', 'America', true),
+    ('Africa', 'Africa', true),
+    ('Oceania', 'Oceania', true);
+
+
+--TABLA TURISMO
+drop table if exists public.tipo_turismo;
+create table if not exists public.tipo_turismo(
 	tipo_turismo_id serial primary key,
 	tipo_turismo varchar(50) not null
 );
 
-insert into tipo_turismo (tipo_turismo)
+insert into public.tipo_turismo (tipo_turismo)
 values
 ('Capital de provincia'), ('Turismo de naturaleza'), ('Turismo cultural'),('Turismo de descanso');
 
-
-create table if not exists mes(
+--TABLA MES
+drop table if exists public.mes;
+create table if not exists public.mes(
 	mes_id serial primary key,
 	mes varchar(50) not null
 );
 
-insert into mes (mes)
+insert into public.mes (mes)
 values
 ('Enero'),
 ('Febrero'),
@@ -28,12 +107,14 @@ values
 ('Noviembre'),
 ('Diciembre');
 
-create table if not exists tipo_residencia(
+--TABLA RESIDENCIA
+drop table if exists public.tipo_residencia;
+create table if not exists public.tipo_residencia(
 	tipo_residencia_id serial primary key,
 	residencia varchar(50) not null
 );
 
-insert into tipo_residencia (residencia)
+insert into public.tipo_residencia (residencia)
 values
 ('Hotel'),
 ('Hostal'),
@@ -41,27 +122,30 @@ values
 ('Apartamento'),
 ('Casa rural');
 
-create table if not exists historial(
+--TABLA HISTORIAL JUDICIAL
+drop table if exists public.historial;
+create table if not exists public.historial(
 	tipo_historial_id serial primary key,
 	historial varchar(50) not null );
 	
-insert into historial (historial)
+insert into public.historial (historial)
 values
-('no tiene delitos'),
+('Sin delitos'),
 ('Falta'),
 ('Leve'),
 ('Grave'),
 ('Muy grave');
 
-create table if not exists discapacidad(
+--TABLA DISCAPACIDAD
+drop table if exists public.discapacidad;
+create table if not exists public.discapacidad(
 	tipo_discapacidad_id serial primary key,
 	tipo_discapacidad varchar(50) not null);
 
-insert into discapacidad (tipo_discapacidad)
+insert into public.discapacidad (tipo_discapacidad)
 values
-('grado 0'),
-('grado 1'),
-('grado 2'),
-('grado 3'),
-('grado 4');
-
+('Grado 0'),
+('Grado 1'),
+('Grado 2'),
+('Grado 3'),
+('Grado 4');
