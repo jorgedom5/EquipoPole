@@ -69,15 +69,13 @@ def generar_fumador():
 def generar_preferencia_viaje():
   prob = fake.random_int(1, 100)
   if prob <= 15: # revisar porcentaje dependiendo del viaje
-    return 1 #capital de provincia
+    return 1 # Capital de provincia
   elif prob <= 35: # revisar porcentaje dependiendo del viaje
-    return 2 #turismo de naturaleza
+    return 2 # Turismo de naturaleza
   elif prob <= 60: # revisar porcentaje dependiendo del viaje
-    return 3 #turismo cultural
-  elif prob <= 90: # revisar porcentaje dependiendo del viaje
-    return 4 #zona costera"
+    return 3 # Turismo cultural
   else:
-    return 5 #turismo internacional
+    return 4 # Turismo de descanso
 
 # FUNCIÓN PARA CREAR EL ESTADO CIVIL POR PORCENTAJES
 def generar_estado_civil():

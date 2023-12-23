@@ -5,7 +5,10 @@ create table if not exists tipo_turismo(
 
 insert into tipo_turismo (tipo_turismo)
 values
-('Capital de provincia'), ('Turismo de naturaleza'), ('Turismo cultural'),('Turismo de descanso');
+('Capital de provincia'), 
+('Turismo de naturaleza'), 
+('Turismo cultural'),
+('Turismo de descanso');
 
 
 create table if not exists mes(
