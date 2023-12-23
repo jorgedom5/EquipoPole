@@ -180,6 +180,18 @@ def generar_geografico():
         # Regiones de Europa, América, África, Oceania
         return fake.random_int(60, 63)  
 
+# FUNCIÓN PARA CREAR LA PREFERENCIA DEL VIAJE POR PORCENTAJES
+def generar_preferencia_viaje():
+    prob = fake.random_int(1, 100)
+    if prob <= 15: # revisar porcentaje dependiendo del viaje
+      return 1 # Capital de provincia
+    elif prob <= 35: # revisar porcentaje dependiendo del viaje
+      return 2 # Turismo de naturaleza
+    elif prob <= 60: # revisar porcentaje dependiendo del viaje
+      return 3 # Turismo cultural
+    else:
+      return 4 # Turismo de descanso
+  
 #TABLA EN SI
 
 def generar_datos_jubilados(jubilado_id):
@@ -197,7 +209,7 @@ def generar_datos_jubilados(jubilado_id):
     participacion_anterior=fake.random_int(1,100)<=15
     preferencia_internacional=fake.random_int(1,100)<=20 #True si prefieren viaje internacional el 20% de los casos
     fumador = fake.random_int(1, 100) <=17 #FUMADOR 17% DE LAS VECES
-    #preferencia_viaje = generar_preferencia_viaje()
+    preferencia_viaje = generar_preferencia_viaje()
     pension_anual = generar_pension_anual()
     años_tributados = generar_años_tributados()
     maltrato = fake.random_int(1, 100) <= 1
@@ -218,7 +230,7 @@ def generar_datos_jubilados(jubilado_id):
         'participacion_anterior': participacion_anterior,
         'preferencia_internacional': preferencia_internacional,
         'fumador': fumador,
-        #'Preferencia viaje': preferencia_viaje,
+        'preferencia_viaje': preferencia_viaje,
         'pension_anual': pension_anual,
         'años_tributados': años_tributados,
         'maltrato': maltrato,
@@ -287,6 +299,7 @@ cursor.execute("""
         participacion_anterior BOOLEAN,
         preferencia_internacional BOOLEAN,
         fumador BOOLEAN,
+        preferencia_viaje INTEGER,
         pension_anual FLOAT,
         años_tributados INTEGER,
         maltrato BOOLEAN,
@@ -326,9 +339,9 @@ for jubilado_id in range(1, 100001):
             jubilado_id, nombre, apellido, genero, edad, endeudamiento,
             tipo_pensionista, historial_judicial, cantidad_hijos, geografico_id,
             participacion_voluntariado, estado_civil, participacion_anterior,
-            preferencia_internacional, fumador, pension_anual, años_tributados,
+            preferencia_internacional, fumador, preferencia_viaje, pension_anual, años_tributados,
             maltrato, discapacidad
-        ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+        ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
     """, (
         datos_jubilados['jubilado_id'], datos_jubilados['nombre'],
         datos_jubilados['apellido'], datos_jubilados['genero'],
@@ -336,7 +349,7 @@ for jubilado_id in range(1, 100001):
         datos_jubilados['tipo_pensionista'], datos_jubilados['historial_judicial'], datos_jubilados['cantidad_hijos'],
         datos_jubilados['geografico_id'], datos_jubilados['participacion_voluntariado'],
         datos_jubilados['estado_civil'], datos_jubilados['participacion_anterior'],
-        datos_jubilados['preferencia_internacional'], datos_jubilados['fumador'], datos_jubilados['pension_anual'],
+        datos_jubilados['preferencia_internacional'], datos_jubilados['fumador'], datos_jubilados['preferencia_viaje'], datos_jubilados['pension_anual'],
         datos_jubilados['años_tributados'], datos_jubilados['maltrato'],
         datos_jubilados['discapacidad']
     ))
