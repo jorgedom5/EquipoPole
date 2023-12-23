@@ -200,7 +200,6 @@ def generar_datos_jubilados(jubilado_id):
     genero = gender_detector.get_gender(nombre_sin_acentos)
     edad = generar_edad()
     endeudamiento = fake.random_int(1, 100) <= 18 # Endeudamiento es True el 18% de los casos
-    tipo_pensionista = fake.random_int(1, 6)
     historial_judicial = generar_historial()
     cantidad_hijos = generar_hijos()
     geografico_id = generar_geografico()
@@ -221,20 +220,19 @@ def generar_datos_jubilados(jubilado_id):
         'genero': genero,
         'edad': edad,
         'endeudamiento': endeudamiento,
-        'tipo_pensionista': tipo_pensionista,
-        'historial_judicial' : historial_judicial,
+        'historial_judicial_id' : historial_judicial,
         'cantidad_hijos' : cantidad_hijos,
         'geografico_id': geografico_id,
         'participacion_voluntariado' : participacion_voluntariado,
-        'estado_civil': estado_civil,
+        'estado_civil_id': estado_civil,
         'participacion_anterior': participacion_anterior,
         'preferencia_internacional': preferencia_internacional,
         'fumador': fumador,
-        'preferencia_viaje': preferencia_viaje,
+        'tipo_turismo_id': preferencia_viaje,
         'pension_anual': pension_anual,
         'años_tributados': años_tributados,
         'maltrato': maltrato,
-        'discapacidad': discapacidad
+        'tipo_discapacidad_id': discapacidad
 
     }
 
@@ -290,20 +288,19 @@ cursor.execute("""
         genero VARCHAR(255),
         edad INTEGER,
         endeudamiento BOOLEAN,
-        tipo_pensionista INTEGER,
-        historial_judicial VARCHAR(255),
+        historial_judicial_id INTEGER,
         cantidad_hijos INTEGER,
         geografico_id INTEGER,
         participacion_voluntariado BOOLEAN,
-        estado_civil VARCHAR(255),
+        estado_civil_id INTEGER,
         participacion_anterior BOOLEAN,
         preferencia_internacional BOOLEAN,
         fumador BOOLEAN,
-        preferencia_viaje INTEGER,
+        tipo_turismo_id INTEGER,
         pension_anual FLOAT,
         años_tributados INTEGER,
         maltrato BOOLEAN,
-        discapacidad VARCHAR(255)
+        tipo_discapacidad_id INTEGER
     );
 """)
 
@@ -337,21 +334,21 @@ for jubilado_id in range(1, 100001):
     cursor.execute("""
         INSERT INTO public.jubilados (
             jubilado_id, nombre, apellido, genero, edad, endeudamiento,
-            tipo_pensionista, historial_judicial, cantidad_hijos, geografico_id,
-            participacion_voluntariado, estado_civil, participacion_anterior,
-            preferencia_internacional, fumador, preferencia_viaje, pension_anual, años_tributados,
-            maltrato, discapacidad
-        ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+            historial_judicial_id, cantidad_hijos, geografico_id,
+            participacion_voluntariado, estado_civil_id, participacion_anterior,
+            preferencia_internacional, fumador, tipo_turismo_id, pension_anual, años_tributados,
+            maltrato, tipo_discapacidad_id
+        ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
     """, (
         datos_jubilados['jubilado_id'], datos_jubilados['nombre'],
         datos_jubilados['apellido'], datos_jubilados['genero'],
         datos_jubilados['edad'], datos_jubilados['endeudamiento'],
-        datos_jubilados['tipo_pensionista'], datos_jubilados['historial_judicial'], datos_jubilados['cantidad_hijos'],
+        datos_jubilados['historial_judicial_id'], datos_jubilados['cantidad_hijos'],
         datos_jubilados['geografico_id'], datos_jubilados['participacion_voluntariado'],
-        datos_jubilados['estado_civil'], datos_jubilados['participacion_anterior'],
-        datos_jubilados['preferencia_internacional'], datos_jubilados['fumador'], datos_jubilados['preferencia_viaje'], datos_jubilados['pension_anual'],
+        datos_jubilados['estado_civil_id'], datos_jubilados['participacion_anterior'],
+        datos_jubilados['preferencia_internacional'], datos_jubilados['fumador'], datos_jubilados['tipo_turismo_id'], datos_jubilados['pension_anual'],
         datos_jubilados['años_tributados'], datos_jubilados['maltrato'],
-        datos_jubilados['discapacidad']
+        datos_jubilados['tipo_discapacidad_id']
     ))
 
 # VIAJES
@@ -369,6 +366,30 @@ for viajes_id in range(1, 151):
     ))
 
 # Commit para aplicar cambios en la base de datos
+conn.commit()
+
+#FOREIGN KEYS CONFIGURACIÓN
+
+cursor.execute("""
+    ALTER TABLE public.jubilados ADD CONSTRAINT jubilados_geografico 
+FOREIGN KEY (geografico_id) REFERENCES public.geografico(geografico_id);
+
+ALTER TABLE public.viajes ADD CONSTRAINT viajes_geografico 
+FOREIGN KEY (geografico_id) REFERENCES public.geografico(geografico_id);
+
+ALTER TABLE public.jubilados ADD CONSTRAINT jubilados_discapacidad 
+FOREIGN KEY (tipo_discapacidad_id) REFERENCES public.discapacidad(tipo_discapacidad_id);
+
+ALTER TABLE public.jubilados ADD CONSTRAINT jubilados_estadocivil 
+FOREIGN KEY (estado_civil_id) REFERENCES public.estado_civil(estado_civil_id);
+
+ALTER TABLE public.jubilados ADD CONSTRAINT jubilados_judicial 
+FOREIGN KEY (historial_judicial_id) REFERENCES public.historial_judicial(historial_judicial_id);
+
+ALTER TABLE public.jubilados ADD CONSTRAINT jubilados_preferencias 
+FOREIGN KEY (tipo_turismo_id) REFERENCES public.tipo_turismo(tipo_turismo_id);
+""")
+
 conn.commit()
 
 # Cerrar la conexión
