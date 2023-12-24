@@ -57,3 +57,19 @@ docker-compose up
 ### SQL SCHEMA
 [![Captura-de-pantalla-2023-12-24-122716.png](https://i.postimg.cc/DfDcqg5b/Captura-de-pantalla-2023-12-24-122716.png)](https://postimg.cc/yWm9K0MV)
 
+## ESTRUCTURA JSON VIAJES
+```json
+{
+   "viajes_id":1,
+   "geografico_id":3,
+   "ciudad":"Cordoba",
+   "comunidad_autonoma":"Andalucia",
+   "es_costa":false,
+   "numero_plazas":12,
+   "numero_dias":7,
+   "mes":"Noviembre",
+   "transporte_pagado":false,
+   "residencia":"Casa rural",
+   "tipo_turismo":"Turismo de descanso"
+}
+```
