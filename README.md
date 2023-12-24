@@ -55,5 +55,5 @@ docker-compose up
 [![SCHEMA.png](https://i.postimg.cc/j2CR7SCW/SCHEMA.png)](https://postimg.cc/y34qqBmB)
 
 ### SQL SCHEMA
-[![SQL.png](https://i.postimg.cc/8zrWQ1pm/SQL.png)](https://postimg.cc/75wbSrT5)
+[![Captura-de-pantalla-2023-12-24-122716.png](https://i.postimg.cc/DfDcqg5b/Captura-de-pantalla-2023-12-24-122716.png)](https://postimg.cc/yWm9K0MV)
 
