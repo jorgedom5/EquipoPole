@@ -245,6 +245,7 @@ def generar_datos_jubilados(jubilado_id):
     discapacidad = generar_discapacidad()
     enfermedad = generar_enfermedades()
     numero_propiedades = generar_numero_propiedades()
+    nacionalidad_española = fake.random_int(1, 100) <=98 #ESPAÑOL 98% DE LAS VECES
     return {
         'jubilado_id': jubilado_id,
         'nombre': nombre_sin_acentos,
@@ -266,7 +267,8 @@ def generar_datos_jubilados(jubilado_id):
         'maltrato': maltrato,
         'tipo_discapacidad_id': discapacidad,
         'enfermedad_id': enfermedad,
-        'numero_propiedades': numero_propiedades
+        'numero_propiedades': numero_propiedades,
+        'nacionalidad_española': nacionalidad_española
 
     }
 
@@ -336,7 +338,8 @@ cursor.execute("""
         maltrato BOOLEAN,
         tipo_discapacidad_id INTEGER,
         enfermedad_id INTEGER,
-        numero_propiedades INTEGER
+        numero_propiedades INTEGER,
+        nacionalidad_española BOOLEAN
     );
 """)
 
@@ -373,8 +376,8 @@ for jubilado_id in range(1, 100001):
             historial_judicial_id, cantidad_hijos, geografico_id,
             participacion_voluntariado, estado_civil_id, participacion_anterior,
             preferencia_internacional, fumador, tipo_turismo_id, pension_anual, años_tributados,
-            maltrato, tipo_discapacidad_id, enfermedad_id, numero_propiedades
-        ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+            maltrato, tipo_discapacidad_id, enfermedad_id, numero_propiedades, nacionalidad_española
+        ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
     """, (
         datos_jubilados['jubilado_id'], datos_jubilados['nombre'],
         datos_jubilados['apellido'], datos_jubilados['genero'],
@@ -384,7 +387,7 @@ for jubilado_id in range(1, 100001):
         datos_jubilados['estado_civil_id'], datos_jubilados['participacion_anterior'],
         datos_jubilados['preferencia_internacional'], datos_jubilados['fumador'], datos_jubilados['tipo_turismo_id'], datos_jubilados['pension_anual'],
         datos_jubilados['años_tributados'], datos_jubilados['maltrato'],
-        datos_jubilados['tipo_discapacidad_id'], datos_jubilados['enfermedad_id'], datos_jubilados['numero_propiedades']
+        datos_jubilados['tipo_discapacidad_id'], datos_jubilados['enfermedad_id'], datos_jubilados['numero_propiedades'], datos_jubilados['nacionalidad_española']
     ))
 
 # VIAJES
