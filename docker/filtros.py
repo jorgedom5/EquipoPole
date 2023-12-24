@@ -5,6 +5,7 @@ import pyodbc as pdb
 import psycopg2
 import numpy as np
 import time
+import json
 
 pd.set_option('mode.chained_assignment', None)
 
@@ -74,6 +75,7 @@ column_names = [desc[0] for desc in cur_target.description]
 # Crea el DataFrame con los datos y los nombres de las columnas
 jubilados_df = pd.DataFrame(list_of_rows, columns=column_names)
 print(jubilados_df)
+jubilados_df['participacion_activa'] = False #VARIABLE PARA SABER SI HA PARTICIPADO ESTE AÑO
 
 
 #PASAR DE LA TABLA DE VIAJES A DATAFRAME
@@ -114,6 +116,7 @@ print(viajes_df)
 
 
 #FILTROS
+resultados_viajes = {}
 
 # Bucle a través de todos los viajes
 for viaje, fila_aleatoria in viajes_df.iterrows():
@@ -125,15 +128,42 @@ for viaje, fila_aleatoria in viajes_df.iterrows():
     # Filtrar df basándose en geografico_id, de forma que puedan acceder los que no viven ahí
     df_filtrado = jubilados_df[jubilados_df['geografico_id'] != geografico_id_aleatorio]
 
+
     #FILTROS DE VERDAD (INSERTAR LOS PUNTOS AQUI, USAD EL NOTEBOOK.IPYNB PARA PROBAR)
+
 
     # PUNTOS INICIALES
     df_filtrado['puntos'] = 0.0
     df_filtrado['puntos'] = df_filtrado['puntos'].astype(float)  # Para insertar decimales
+    
+    # PUNTOS POR MISMA COMUNIDAD AUTONOMA
+    df_filtrado.loc[df_filtrado['comunidad_autonoma'] == info_viaje['comunidad_autonoma'], 'puntos'] -= 3
 
     #PUNTOS POR EDAD
     df_filtrado['puntos'] += np.minimum(
-        10, 10 * (np.exp(0.01 * (df_filtrado['edad'] - 58)) ** 1.15 - 1) / (np.exp(0.01 * (90 - 58)) ** 1.15 - 1) + 0.6)
+        10, 10 * (np.exp(0.01 * (df_filtrado['edad'] - 58)) ** 1.15 - 1) / (np.exp(0.01 * (80 - 58)) ** 1.15 - 1) + 0.6)
+    
+    #PUNTOS POR PENSION ANUAL
+    df_filtrado.loc[(df_filtrado['pension_anual'] > 10963) & (df_filtrado['pension_anual'] < 12000), 'puntos'] += 10
+    df_filtrado.loc[(df_filtrado['pension_anual'] > 12000) & (df_filtrado['pension_anual'] < 16000), 'puntos'] += 9
+    df_filtrado.loc[(df_filtrado['pension_anual'] > 16000) & (df_filtrado['pension_anual'] < 21500), 'puntos'] += 7
+    df_filtrado.loc[(df_filtrado['pension_anual'] > 21500) & (df_filtrado['pension_anual'] < 24000), 'puntos'] += 5
+    df_filtrado.loc[(df_filtrado['pension_anual'] > 24000) & (df_filtrado['pension_anual'] < 27000), 'puntos'] += 3.5
+    df_filtrado.loc[(df_filtrado['pension_anual'] > 27000) & (df_filtrado['pension_anual'] < 30000), 'puntos'] += 2
+    df_filtrado.loc[(df_filtrado['pension_anual'] > 30000) & (df_filtrado['pension_anual'] < 32000), 'puntos'] += 1
+    
+    #PUNTOS POR HIJOS
+    df_filtrado['puntos'] += ((df_filtrado['cantidad_hijos'] - 2) * 0.4)
+    
+    #PUNTOS POR ESTADO CIVIL
+    df_filtrado.loc[df_filtrado['estado_civil'] == 'Viudo', 'puntos'] +=5.5
+    df_filtrado.loc[df_filtrado['estado_civil'] == 'Casado', 'puntos'] +=2
+    
+    #PUNTOS POR ESTADO DE SALUD
+    df_filtrado.loc[df_filtrado['enfermedad_nivel'] == 'Ninguna', 'puntos'] +=1
+    df_filtrado.loc[df_filtrado['enfermedad_nivel'] == 'Leve', 'puntos'] +=2.5
+    df_filtrado.loc[df_filtrado['enfermedad_nivel'] == 'Media', 'puntos'] +=4.25
+    df_filtrado.loc[df_filtrado['enfermedad_nivel'] == 'Grave', 'puntos'] -=10
     
     #PUNTOS POR ENDEUDAMIENTO
     df_filtrado.loc[df_filtrado['endeudamiento'] == True, 'puntos'] -= 7
@@ -142,19 +172,55 @@ for viaje, fila_aleatoria in viajes_df.iterrows():
     df_filtrado['puntos'] += ((df_filtrado['años_tributados'] - 15) * 0.37)
     
     #PUNTOS POR FUMADOR
-    df_filtrado.loc[df_filtrado['fumador'] == True, 'puntos'] -=0.5
+    df_filtrado.loc[df_filtrado['fumador'] == True, 'puntos'] -=2
     
     #PUNTOS POR NUMERO DE PROPIEDADES
-    df_filtrado['puntos'] -= (df_filtrado['numero_propiedades']* 1.5)
+    df_filtrado['puntos'] -= (df_filtrado['numero_propiedades']* 1.25)
     
     #PUNTOS POR PARTICIPACION VOLUNTARIADO
-    df_filtrado.loc[df_filtrado['participacion_voluntariado'] == True, 'puntos'] += 2
+    df_filtrado.loc[df_filtrado['participacion_voluntariado'] == True, 'puntos'] += 2.5
+    
+    #PUNTOS POR HISTORIAL JUDICIAL
+    df_filtrado.loc[df_filtrado['historial_judicial'] == 'Muy Grave', 'puntos'] -= 1000
+    df_filtrado.loc[df_filtrado['historial_judicial'] == 'Grave', 'puntos'] -= 10
+    df_filtrado.loc[df_filtrado['historial_judicial'] == 'Leve', 'puntos'] -= 2
+    df_filtrado.loc[df_filtrado['historial_judicial'] == 'Falta', 'puntos'] -= 0.1
+    
+    #PUNTOS POR DISCAPACIDAD
+    df_filtrado.loc[df_filtrado['tipo_discapacidad'] == 'Grado 1', 'puntos'] += 0.5
+    df_filtrado.loc[df_filtrado['tipo_discapacidad'] == 'Grado 2', 'puntos'] += 1.25
+    df_filtrado.loc[df_filtrado['tipo_discapacidad'] == 'Grado 3', 'puntos'] += 2
+    df_filtrado.loc[df_filtrado['tipo_discapacidad'] == 'Grado 4', 'puntos'] -= 1000
+    df_filtrado.loc[df_filtrado['tipo_discapacidad'] == 'Grado 5', 'puntos'] -= 1000
+    
+    #PUNTOS POR PARTICIPACION ANTERIOR
+    df_filtrado.loc[df_filtrado['participacion_anterior'] == True, 'puntos'] -= 5
+    df_filtrado.loc[df_filtrado['participacion_activa'] == True, 'puntos'] -= 10 #SI YA HA PARTICIPADO EN ESTE AÑO
+    
+    #PUNTOS POR VICTIMA DE MALTRATO
+    df_filtrado.loc[df_filtrado['maltrato'] == True, 'puntos'] += 3
+    
+    #PUNTOS POR PREFERENCIA DE VIAJE
+    df_filtrado.loc[df_filtrado['tipo_turismo'] == info_viaje['tipo_turismo'], 'puntos'] += 4
+    
+    #PUNTOS POR PREFERENCIA DE VIAJE INTERNACIONAL
+    df_filtrado.loc[(df_filtrado['preferencia_internacional'] == True) & ((info_viaje['geografico_id'] == 60) | 
+                                                                          (info_viaje['geografico_id'] == 61) | 
+                                                                          (info_viaje['geografico_id'] == 62) | 
+                                                                          (info_viaje['geografico_id'] == 63)), 'puntos'] += 4
 
-    # CAPACIDAD VIAJE
+
+    # FILTRAR POR  DE CAPACIDAD VIAJE
     df_sorted = df_filtrado.sort_values(by='puntos', ascending=False)  # Para ordenar de más puntos a menos
     capacidad_viaje = info_viaje['numero_plazas']  # Crear una variable con la capacidad del viaje a partir del diccionario anterior
 
     # RESULTADO
     abuelos_seleccionados = df_sorted.head(capacidad_viaje)  # Limitamos por capacidad y mostramos
     #pd.set_option('display.max_columns', None)
+    jubilados_df.loc[jubilados_df['jubilado_id'].isin(abuelos_seleccionados['jubilado_id']), 'participacion_activa'] = True
     print(abuelos_seleccionados)
+    resultados_viajes[f'viaje_{viaje + 1}'] = abuelos_seleccionados.to_dict(orient='records')
+
+#GUARDAR EN UN JSON LOS GANADORES
+with open('resultados_viajes.json', 'w') as json_file:
+    json.dump(resultados_viajes, json_file)
