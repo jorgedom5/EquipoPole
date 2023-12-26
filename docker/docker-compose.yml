@@ -14,11 +14,15 @@ services:
       - POSTGRES_DB=root
 
   python:
-    image: python
+    image: python:3.11.7
     restart: no
     volumes:
       - .:/app  # Mount the entire current directory to /app in the container
-    command: bash -c "pip install -r /app/requirements.txt && python /app/main.py"  # Use /app/main.py as the path to the Python script
+      - datos_salida:/app/datos_salida 
+    command: bash -c "pip install -r /app/requirements.txt && python /app/main.py && python /app/filtros.py"
 
 volumes:
   postgres:
+  datos_salida:
+
+#QUITAR DATOS DE SALIDA SI DA ERROR

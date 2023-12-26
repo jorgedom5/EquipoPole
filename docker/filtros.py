@@ -1,7 +1,6 @@
 #archivo para poner los filtros
 
 import pandas as pd
-import pyodbc as pdb
 import psycopg2
 import numpy as np
 import time
@@ -10,7 +9,7 @@ import json
 pd.set_option('mode.chained_assignment', None)
 
 #CONEXIONES BASE DE DATOS
-host = "localhost" #SI ES PARA EL DOCKER-COMPOSE, CAMBIAR POR "postgres"
+host = "postgres" #SI ES PARA EL DOCKER-COMPOSE, CAMBIAR POR "postgres"
 database = "root"
 user = "root"
 password = "root"
@@ -53,7 +52,8 @@ select
   participacion_voluntariado, 
   fumador, 
   preferencia_internacional, 
-  tt.tipo_turismo 
+  preferencia_viaje_1,
+  preferencia_viaje_2
 from 
   jubilados j 
   left join geografico g on j.geografico_id = g.geografico_id 
@@ -61,7 +61,7 @@ from
   left join discapacidad d on j.tipo_discapacidad_id = d.tipo_discapacidad_id 
   left join enfermedades e on j.enfermedad_id = e.enfermedad_id 
   left join historial_judicial hj on j.historial_judicial_id = hj.historial_judicial_id 
-  left join tipo_turismo tt on j.tipo_turismo_id = tt.tipo_turismo_id;
+;
 """
 
 cur_target.execute(query_jubilados)
@@ -201,7 +201,8 @@ for viaje, fila_aleatoria in viajes_df.iterrows():
     df_filtrado.loc[df_filtrado['maltrato'] == True, 'puntos'] += 3
     
     #PUNTOS POR PREFERENCIA DE VIAJE
-    df_filtrado.loc[df_filtrado['tipo_turismo'] == info_viaje['tipo_turismo'], 'puntos'] += 4
+    df_filtrado.loc[df_filtrado['preferencia_viaje_1'] == info_viaje['viajes_id'], 'puntos'] += 5
+    df_filtrado.loc[df_filtrado['preferencia_viaje_2'] == info_viaje['viajes_id'], 'puntos'] += 2.5
     
     #PUNTOS POR PREFERENCIA DE VIAJE INTERNACIONAL
     df_filtrado.loc[(df_filtrado['preferencia_internacional'] == True) & ((info_viaje['geografico_id'] == 60) | 
@@ -221,6 +222,7 @@ for viaje, fila_aleatoria in viajes_df.iterrows():
     print(abuelos_seleccionados)
     resultados_viajes[f'viaje_{viaje + 1}'] = abuelos_seleccionados.to_dict(orient='records')
 
-#GUARDAR EN UN JSON LOS GANADORES
-with open('resultados_viajes.json', 'w') as json_file:
+#GUARDAR EN UN JSON LOS GANADORES, CAMBIO
+json_path = '/app/resultados_viajes.json' #en docker, para guardar el archivo
+with open(json_path, 'w') as json_file:
     json.dump(resultados_viajes, json_file)
