@@ -2,7 +2,7 @@
 
 ## Viajes Imserso
 
-![redbull.png](https://cdn-1.motorsport.com/images/mgl/Y99JQRbY/s8/red-bull-racing-logo-1.jpg)
+[![redbull-imserso.png](https://i.postimg.cc/1XMX575G/redbull-imserso.png)](https://postimg.cc/wRygwVNM)
 
 Welcome to the Red Bull Racing Team's winning project for Data Project 1! 🏎️🚀
 
@@ -55,7 +55,7 @@ docker-compose up
 [![SCHEMA.png](https://i.postimg.cc/j2CR7SCW/SCHEMA.png)](https://postimg.cc/y34qqBmB)
 
 ### SQL SCHEMA
-[![Captura-de-pantalla-2023-12-24-122716.png](https://i.postimg.cc/DfDcqg5b/Captura-de-pantalla-2023-12-24-122716.png)](https://postimg.cc/yWm9K0MV)
+[![75d132b7-273b-4410-abdc-c6749266eb59.jpg](https://i.postimg.cc/k4TP20Kg/75d132b7-273b-4410-abdc-c6749266eb59.jpg)](https://postimg.cc/tZnMfmBK)
 
 ## ESTRUCTURA JSON VIAJES
 ```json
