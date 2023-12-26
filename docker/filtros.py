@@ -199,7 +199,7 @@ for viaje, fila_aleatoria in viajes_df.iterrows():
     
     #PUNTOS POR PARTICIPACION ANTERIOR
     df_filtrado.loc[df_filtrado['participacion_anterior'] == True, 'puntos'] -= 5
-    df_filtrado.loc[df_filtrado['participacion_activa'] == True, 'puntos'] -= 10 #SI YA HA PARTICIPADO EN ESTE AÑO
+    df_filtrado.loc[df_filtrado['participacion_activa'] == True, 'puntos'] -= 11 #SI YA HA PARTICIPADO EN ESTE AÑO
     
     #PUNTOS POR VICTIMA DE MALTRATO
     df_filtrado.loc[df_filtrado['maltrato'] == True, 'puntos'] += 3
