@@ -233,10 +233,8 @@ def generar_datos_jubilados(jubilado_id):
     preferencia_viaje3= random.randint(1, 150)
     while preferencia_viaje2 == preferencia_viaje:
       preferencia_viaje2 = random.randint(1, 150)
-    while preferencia_viaje3 == preferencia_viaje:
+    while preferencia_viaje3 == preferencia_viaje or preferencia_viaje3 == preferencia_viaje2:
       preferencia_viaje3 = random.randint(1, 150)
-    while preferencia_viaje3==preferencia_viaje2:
-       preferencia_viaje3= random.randint(1, 150)
     pension_anual = generar_pension_anual()
     años_tributados = generar_años_tributados()
     maltrato = fake.random_int(1, 100) <= 1
@@ -372,6 +370,8 @@ conn.commit()
 
 for jubilado_id in range(1, 100001):
     datos_jubilados = generar_datos_jubilados(jubilado_id)
+    progress = (jubilado_id/100000)*100
+    print (f'CREACIÓN TABLAS:{progress}%')
     cursor.execute("""
         INSERT INTO public.jubilados (
             jubilado_id, nombre, apellido, genero, edad, endeudamiento,
