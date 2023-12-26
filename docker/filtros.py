@@ -53,7 +53,8 @@ select
   fumador, 
   preferencia_internacional, 
   preferencia_viaje_1,
-  preferencia_viaje_2
+  preferencia_viaje_2,
+  preferencia_viaje_3
 from 
   jubilados j 
   left join geografico g on j.geografico_id = g.geografico_id 
@@ -203,13 +204,15 @@ for viaje, fila_aleatoria in viajes_df.iterrows():
     #PUNTOS POR PREFERENCIA DE VIAJE
     df_filtrado.loc[df_filtrado['preferencia_viaje_1'] == info_viaje['viajes_id'], 'puntos'] += 5
     df_filtrado.loc[df_filtrado['preferencia_viaje_2'] == info_viaje['viajes_id'], 'puntos'] += 2.5
+    df_filtrado.loc[df_filtrado['preferencia_viaje_3'] == info_viaje['viajes_id'], 'puntos'] += 1.5    
     
     #PUNTOS POR PREFERENCIA DE VIAJE INTERNACIONAL
     df_filtrado.loc[(df_filtrado['preferencia_internacional'] == True) & ((info_viaje['geografico_id'] == 60) | 
                                                                           (info_viaje['geografico_id'] == 61) | 
                                                                           (info_viaje['geografico_id'] == 62) | 
                                                                           (info_viaje['geografico_id'] == 63)), 'puntos'] += 4
-
+    #PUNTOS SI NO VIVEN EN ZONA DE COSTA PARA VIAJES DE COSTA
+    df_filtrado.loc[(df_filtrado['es_costa'] == False)&(info_viaje['es_costa']== True),'puntos'] += 5
 
     # FILTRAR POR  DE CAPACIDAD VIAJE
     df_sorted = df_filtrado.sort_values(by='puntos', ascending=False)  # Para ordenar de más puntos a menos

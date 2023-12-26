@@ -230,8 +230,13 @@ def generar_datos_jubilados(jubilado_id):
     fumador = fake.random_int(1, 100) <=17 #FUMADOR 17% DE LAS VECES
     preferencia_viaje = random.randint(1, 150)
     preferencia_viaje2 = random.randint(1, 150)
+    preferencia_viaje3= random.randint(1, 150)
     while preferencia_viaje2 == preferencia_viaje:
       preferencia_viaje2 = random.randint(1, 150)
+    while preferencia_viaje3 == preferencia_viaje:
+      preferencia_viaje3 = random.randint(1, 150)
+    while preferencia_viaje3==preferencia_viaje2:
+       preferencia_viaje3= random.randint(1, 150)
     pension_anual = generar_pension_anual()
     años_tributados = generar_años_tributados()
     maltrato = fake.random_int(1, 100) <= 1
@@ -256,6 +261,7 @@ def generar_datos_jubilados(jubilado_id):
         'fumador': fumador,
         'preferencia_viaje_1': preferencia_viaje,
         'preferencia_viaje_2': preferencia_viaje2,
+        'preferencia_viaje_3': preferencia_viaje3,
         'pension_anual': pension_anual,
         'años_tributados': años_tributados,
         'maltrato': maltrato,
@@ -328,6 +334,7 @@ cursor.execute("""
         fumador BOOLEAN,
         preferencia_viaje_1 INTEGER,
         preferencia_viaje_2 INTEGER,
+        preferencia_viaje_3 INTEGER,
         pension_anual FLOAT,
         años_tributados INTEGER,
         maltrato BOOLEAN,
@@ -370,9 +377,9 @@ for jubilado_id in range(1, 100001):
             jubilado_id, nombre, apellido, genero, edad, endeudamiento,
             historial_judicial_id, cantidad_hijos, geografico_id,
             participacion_voluntariado, estado_civil_id, participacion_anterior,
-            preferencia_internacional, fumador, preferencia_viaje_1, preferencia_viaje_2, pension_anual, años_tributados,
+            preferencia_internacional, fumador, preferencia_viaje_1, preferencia_viaje_2,preferencia_viaje_3, pension_anual, años_tributados,
             maltrato, tipo_discapacidad_id, enfermedad_id, numero_propiedades, nacionalidad_española
-        ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+        ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s,%s)
     """, (
         datos_jubilados['jubilado_id'], datos_jubilados['nombre'],
         datos_jubilados['apellido'], datos_jubilados['genero'],
@@ -380,7 +387,7 @@ for jubilado_id in range(1, 100001):
         datos_jubilados['historial_judicial_id'], datos_jubilados['cantidad_hijos'],
         datos_jubilados['geografico_id'], datos_jubilados['participacion_voluntariado'],
         datos_jubilados['estado_civil_id'], datos_jubilados['participacion_anterior'],
-        datos_jubilados['preferencia_internacional'], datos_jubilados['fumador'], datos_jubilados['preferencia_viaje_1'], datos_jubilados['preferencia_viaje_2'], datos_jubilados['pension_anual'],
+        datos_jubilados['preferencia_internacional'], datos_jubilados['fumador'], datos_jubilados['preferencia_viaje_1'], datos_jubilados['preferencia_viaje_2'],datos_jubilados['preferencia_viaje_3'], datos_jubilados['pension_anual'],
         datos_jubilados['años_tributados'], datos_jubilados['maltrato'],
         datos_jubilados['tipo_discapacidad_id'], datos_jubilados['enfermedad_id'], datos_jubilados['numero_propiedades'], datos_jubilados['nacionalidad_española']
     ))
