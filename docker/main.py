@@ -6,6 +6,8 @@ from gender_guesser.detector import Detector
 from unidecode import unidecode
 import numpy as np
 
+random.seed(42) #OBTENER LO MISMO SIEMRPE
+
 # CONFIGURACIÓN
 fake = Faker('es_ES')  # Configura Faker para generar datos en español
 gender_detector = Detector()
