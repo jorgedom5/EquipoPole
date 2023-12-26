@@ -8,6 +8,11 @@ Welcome to the Red Bull Racing Team's winning project for Data Project 1! üèéÔ∏
 
 ## Overview
 
+PARA APLICAR ESTE MARAVILLOSO DATAPROJECT, CLONAR EL REPOSITORIO Y USAD:
+```bash
+docker-compose up
+```
+
 ### Why Red Bull Racing Team?
 
 1. **Proven Track Record in Data Analytics**
@@ -45,11 +50,6 @@ Welcome to the Red Bull Racing Team's winning project for Data Project 1! üèéÔ∏
 - Docker
 - SQL
 - Tableau
-
-To apply this project, use the following command:
-```bash
-docker-compose up
-```
 
 ### Overall Idea
 [![SCHEMA.png](https://i.postimg.cc/j2CR7SCW/SCHEMA.png)](https://postimg.cc/y34qqBmB)
