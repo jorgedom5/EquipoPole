@@ -77,6 +77,7 @@ column_names = [desc[0] for desc in cur_target.description]
 jubilados_df = pd.DataFrame(list_of_rows, columns=column_names)
 print(jubilados_df)
 jubilados_df['participacion_activa'] = False #VARIABLE PARA SABER SI HA PARTICIPADO ESTE AÑO
+jubilados_df['mes_ultimo_viaje'] = None 
 
 
 #PASAR DE LA TABLA DE VIAJES A DATAFRAME
@@ -124,10 +125,12 @@ for viaje, fila_aleatoria in viajes_df.iterrows():
     print(f'analizando viaje {viaje + 1}')
     # Obtener el valor de geografico_id del viaje actual
     geografico_id_aleatorio = fila_aleatoria['geografico_id']
+    mes_viaje_aleatorio = fila_aleatoria['mes']
     info_viaje = fila_aleatoria.to_dict()  # Guarda la info del viaje en un diccionario
 
-    # Filtrar df basándose en geografico_id, de forma que puedan acceder los que no viven ahí
-    df_filtrado = jubilados_df[jubilados_df['geografico_id'] != geografico_id_aleatorio]
+    # Filtrar df basándose en geografico_id, de forma que puedan acceder los que no viven ahí, y eliminamos de paso los que han viajado en el mismo mes
+    df_filtrado = jubilados_df[(jubilados_df['geografico_id'] != geografico_id_aleatorio) & 
+                               (jubilados_df['mes_ultimo_viaje'] != mes_viaje_aleatorio)]
 
 
     #FILTROS DE VERDAD (INSERTAR LOS PUNTOS AQUI, USAD EL NOTEBOOK.IPYNB PARA PROBAR)
@@ -222,6 +225,7 @@ for viaje, fila_aleatoria in viajes_df.iterrows():
     abuelos_seleccionados = df_sorted.head(capacidad_viaje)  # Limitamos por capacidad y mostramos
     # pd.set_option('display.max_columns', None)
     jubilados_df.loc[jubilados_df['jubilado_id'].isin(abuelos_seleccionados['jubilado_id']), 'participacion_activa'] = True
+    jubilados_df.loc[jubilados_df['jubilado_id'].isin(abuelos_seleccionados['jubilado_id']), 'mes_ultimo_viaje'] = mes_viaje_aleatorio #poner el mes en el que han viajado
     print(abuelos_seleccionados)
     
     info_viaje_dict = info_viaje.copy()
