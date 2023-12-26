@@ -18,11 +18,9 @@ services:
     restart: no
     volumes:
       - .:/app  # Mount the entire current directory to /app in the container
-      - datos_salida:/app/datos_salida 
     command: bash -c "pip install -r /app/requirements.txt && python /app/main.py && python /app/filtros.py"
 
 volumes:
   postgres:
-  datos_salida:
 
 #QUITAR DATOS DE SALIDA SI DA ERROR
