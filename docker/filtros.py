@@ -220,12 +220,18 @@ for viaje, fila_aleatoria in viajes_df.iterrows():
 
     # RESULTADO
     abuelos_seleccionados = df_sorted.head(capacidad_viaje)  # Limitamos por capacidad y mostramos
-    #pd.set_option('display.max_columns', None)
+    # pd.set_option('display.max_columns', None)
     jubilados_df.loc[jubilados_df['jubilado_id'].isin(abuelos_seleccionados['jubilado_id']), 'participacion_activa'] = True
     print(abuelos_seleccionados)
-    resultados_viajes[f'viaje_{viaje + 1}'] = abuelos_seleccionados.to_dict(orient='records')
+    
+    info_viaje_dict = info_viaje.copy()
+    resultados_viajes[f'viaje_{viaje + 1}'] = {
+      "info_viaje": info_viaje_dict,
+      "participantes": abuelos_seleccionados.to_dict(orient='records')
+    }
 
-#GUARDAR EN UN JSON LOS GANADORES, CAMBIO
-json_path = '/app/resultados_viajes.json' #en docker, para guardar el archivo
+# GUARDAR EN UN JSON LOS GANADORES, CAMBIO
+json_path = '/app/resultados_viajes.json'  # en docker, para guardar el archivo
+#json_path = 'resultados_viajes.json'  # en local, para guardar el archivo
 with open(json_path, 'w') as json_file:
     json.dump(resultados_viajes, json_file)
