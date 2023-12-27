@@ -141,7 +141,7 @@ for viaje, fila_aleatoria in viajes_df.iterrows():
     df_filtrado['puntos'] = df_filtrado['puntos'].astype(float)  # Para insertar decimales
     
     # PUNTOS POR MISMA COMUNIDAD AUTONOMA
-    df_filtrado.loc[df_filtrado['comunidad_autonoma'] == info_viaje['comunidad_autonoma'], 'puntos'] -= 3
+    df_filtrado.loc[df_filtrado['comunidad_autonoma'] == info_viaje['comunidad_autonoma'], 'puntos'] -= 5
 
     #PUNTOS POR EDAD
     df_filtrado['puntos'] += np.minimum(
@@ -161,12 +161,13 @@ for viaje, fila_aleatoria in viajes_df.iterrows():
     
     #PUNTOS POR ESTADO CIVIL
     df_filtrado.loc[df_filtrado['estado_civil'] == 'Viudo', 'puntos'] +=5.5
+    df_filtrado.loc[df_filtrado['estado_civil'] == 'Soltero', 'puntos'] +=4
     df_filtrado.loc[df_filtrado['estado_civil'] == 'Casado', 'puntos'] +=2
     
     #PUNTOS POR ESTADO DE SALUD
     df_filtrado.loc[df_filtrado['enfermedad_nivel'] == 'Ninguna', 'puntos'] +=1
-    df_filtrado.loc[df_filtrado['enfermedad_nivel'] == 'Leve', 'puntos'] +=2.5
-    df_filtrado.loc[df_filtrado['enfermedad_nivel'] == 'Media', 'puntos'] +=4.25
+    df_filtrado.loc[df_filtrado['enfermedad_nivel'] == 'Leve', 'puntos'] +=1.5
+    df_filtrado.loc[df_filtrado['enfermedad_nivel'] == 'Media', 'puntos'] +=3.25
     df_filtrado.loc[df_filtrado['enfermedad_nivel'] == 'Grave', 'puntos'] -=10
     
     #PUNTOS POR ENDEUDAMIENTO
@@ -188,12 +189,12 @@ for viaje, fila_aleatoria in viajes_df.iterrows():
     df_filtrado.loc[df_filtrado['historial_judicial'] == 'Muy Grave', 'puntos'] -= 1000
     df_filtrado.loc[df_filtrado['historial_judicial'] == 'Grave', 'puntos'] -= 10
     df_filtrado.loc[df_filtrado['historial_judicial'] == 'Leve', 'puntos'] -= 2
-    df_filtrado.loc[df_filtrado['historial_judicial'] == 'Falta', 'puntos'] -= 0.1
+    df_filtrado.loc[df_filtrado['historial_judicial'] == 'Falta', 'puntos'] -= 0.5
     
     #PUNTOS POR DISCAPACIDAD
-    df_filtrado.loc[df_filtrado['tipo_discapacidad'] == 'Grado 1', 'puntos'] += 0.5
-    df_filtrado.loc[df_filtrado['tipo_discapacidad'] == 'Grado 2', 'puntos'] += 1.25
-    df_filtrado.loc[df_filtrado['tipo_discapacidad'] == 'Grado 3', 'puntos'] += 2
+    df_filtrado.loc[df_filtrado['tipo_discapacidad'] == 'Grado 1', 'puntos'] += 0.2
+    df_filtrado.loc[df_filtrado['tipo_discapacidad'] == 'Grado 2', 'puntos'] += 0.5
+    df_filtrado.loc[df_filtrado['tipo_discapacidad'] == 'Grado 3', 'puntos'] += 0.8
     df_filtrado.loc[df_filtrado['tipo_discapacidad'] == 'Grado 4', 'puntos'] -= 1000
     df_filtrado.loc[df_filtrado['tipo_discapacidad'] == 'Grado 5', 'puntos'] -= 1000
     
