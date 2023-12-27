@@ -55,7 +55,7 @@ docker-compose up
 [![SCHEMA.png](https://i.postimg.cc/j2CR7SCW/SCHEMA.png)](https://postimg.cc/y34qqBmB)
 
 ### SQL SCHEMA
-[![75d132b7-273b-4410-abdc-c6749266eb592.jpg](https://i.postimg.cc/NfwWk8kc/75d132b7-273b-4410-abdc-c6749266eb592.jpg)](https://postimg.cc/nM0RHDWR)
+[![75d132b7-273b-4410-abdc-c6749266eb592.jpg](https://i.postimg.cc/4Nr8W2qP/75d132b7-273b-4410-abdc-c6749266eb592.jpg)](https://postimg.cc/ZCxFRHTv)
 
 ## ESTRUCTURA JSON VIAJES
 ```json
