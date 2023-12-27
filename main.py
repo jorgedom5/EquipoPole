@@ -122,52 +122,52 @@ def generar_discapacidad():
 # FUNCIÓN PARA CREAR LUGARES DONDE RESIDEN POR PORCENTAJES
 def generar_geografico():
     prob = fake.random_int(1, 100)
-    if prob <= 13.82:
+    if prob <= 12.82:
         # Regiones de Andalucía menos Sevilla (13.82%)
         return fake.random_int(1, 7)
-    if prob <= 17.82:
+    if prob <= 15.82:
         # SEVILLA (4%)
         return 8
-    elif prob <= 22.57:
+    elif prob <= 21.57:
         # Regiones de Aragón (4.75%)
         return fake.random_int(9, 11)
-    elif prob <= 26.76:
+    elif prob <= 25.76:
         # Regiones de Asturias (4.19%)
         return fake.random_int(12, 13)
-    elif prob <= 31.57:
+    elif prob <= 30.57:
         # Regiones de Islas Baleares (4.81%)
         return fake.random_int(14, 17)
-    elif prob <= 35.76:
+    elif prob <= 34.76:
         # Regiones de Canarias (4.19%)
         return fake.random_int(18, 21)
-    elif prob <= 38.95:
+    elif prob <= 37.95:
         # Regiones de Cantabria (3.19%)
         return 22
-    elif prob <= 42.14:
+    elif prob <= 41.14:
         # Regiones de Castilla-La Mancha (3.19%)
         return fake.random_int(23, 27)
-    elif prob <= 46.03:
+    elif prob <= 45.03:
         # Regiones de Castilla y León (3.89%)
         return fake.random_int(28, 36)
-    elif prob <= 55.78:
+    elif prob <= 54.78:
         # BARCELONA (9.75%)
         return 37
-    elif prob <= 60.62:
+    elif prob <= 59.62:
         # Regiones de Cataluña (4.84%)
         return fake.random_int(38, 40)
-    elif prob <= 63.81:
+    elif prob <= 62.81:
         # Regiones de Comunidad Valenciana - VALENCIA (3.19%)
         return fake.random_int(41, 42)
-    elif prob <= 69:
+    elif prob <= 68:
         # VALENCIA (5.19%)
         return 43
-    elif prob <= 71:
+    elif prob <= 70:
         # Regiones de Extremadura (2%)
         return fake.random_int(44, 45)
-    elif prob <= 76:
+    elif prob <= 75:
         # Regiones de Galicia (4%)
         return fake.random_int(46, 49)
-    elif prob <= 78.5:
+    elif prob <= 77.5:
         # Regiones de La Rioja (3.5%)
         return 50
     elif prob <= 90:
