@@ -109,11 +109,11 @@ def generar_años_tributados():
 # FUNCIÓN PARA CREAR SI HAY DISCAPACIDAD POR PORCENTAJES
 def generar_discapacidad():
   prob = fake.random_int(1, 100)
-  if prob <= 4:
+  if prob <= 3.5:
     return 2
-  elif prob <= 11:
+  elif prob <= 4.15:
     return 3
-  elif prob <=  29:
+  elif prob <=  5:
     return 4
   else:
     return 1
