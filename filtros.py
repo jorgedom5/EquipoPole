@@ -161,7 +161,7 @@ for viaje, fila_aleatoria in viajes_df.iterrows():
     
     #PUNTOS POR ESTADO CIVIL
     df_filtrado.loc[df_filtrado['estado_civil'] == 'Viudo', 'puntos'] +=5.5
-    df_filtrado.loc[df_filtrado['estado_civil'] == 'Soltero', 'puntos'] +=4
+    df_filtrado.loc[df_filtrado['estado_civil'] == 'Soltero', 'puntos'] +=2.25
     df_filtrado.loc[df_filtrado['estado_civil'] == 'Casado', 'puntos'] +=2
     
     #PUNTOS POR ESTADO DE SALUD
