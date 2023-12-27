@@ -157,7 +157,7 @@ for viaje, fila_aleatoria in viajes_df.iterrows():
     df_filtrado.loc[(df_filtrado['pension_anual'] > 30000) & (df_filtrado['pension_anual'] < 32000), 'puntos'] += 1
     
     #PUNTOS POR HIJOS
-    df_filtrado['puntos'] += ((df_filtrado['cantidad_hijos'] - 2) * 0.4)
+    df_filtrado['puntos'] += ((df_filtrado['cantidad_hijos'] - 2) * 1.25)
     
     #PUNTOS POR ESTADO CIVIL
     df_filtrado.loc[df_filtrado['estado_civil'] == 'Viudo', 'puntos'] +=5.5
@@ -192,9 +192,9 @@ for viaje, fila_aleatoria in viajes_df.iterrows():
     df_filtrado.loc[df_filtrado['historial_judicial'] == 'Falta', 'puntos'] -= 0.5
     
     #PUNTOS POR DISCAPACIDAD
-    df_filtrado.loc[df_filtrado['tipo_discapacidad'] == 'Grado 1', 'puntos'] += 0.2
-    df_filtrado.loc[df_filtrado['tipo_discapacidad'] == 'Grado 2', 'puntos'] += 0.5
-    df_filtrado.loc[df_filtrado['tipo_discapacidad'] == 'Grado 3', 'puntos'] += 0.8
+    df_filtrado.loc[df_filtrado['tipo_discapacidad'] == 'Grado 1', 'puntos'] += 0.5
+    df_filtrado.loc[df_filtrado['tipo_discapacidad'] == 'Grado 2', 'puntos'] += 1.25
+    df_filtrado.loc[df_filtrado['tipo_discapacidad'] == 'Grado 3', 'puntos'] += 2
     df_filtrado.loc[df_filtrado['tipo_discapacidad'] == 'Grado 4', 'puntos'] -= 1000
     df_filtrado.loc[df_filtrado['tipo_discapacidad'] == 'Grado 5', 'puntos'] -= 1000
     
@@ -203,7 +203,7 @@ for viaje, fila_aleatoria in viajes_df.iterrows():
     df_filtrado.loc[df_filtrado['participacion_activa'] == True, 'puntos'] -= 11 #SI YA HA PARTICIPADO EN ESTE AÑO
     
     #PUNTOS POR VICTIMA DE MALTRATO
-    df_filtrado.loc[df_filtrado['maltrato'] == True, 'puntos'] += 3
+    df_filtrado.loc[df_filtrado['maltrato'] == True, 'puntos'] += 2.5
     
     #PUNTOS POR PREFERENCIA DE VIAJE
     df_filtrado.loc[df_filtrado['preferencia_viaje_1'] == info_viaje['viajes_id'], 'puntos'] += 5
@@ -214,9 +214,9 @@ for viaje, fila_aleatoria in viajes_df.iterrows():
     df_filtrado.loc[(df_filtrado['preferencia_internacional'] == True) & ((info_viaje['geografico_id'] == 60) | 
                                                                           (info_viaje['geografico_id'] == 61) | 
                                                                           (info_viaje['geografico_id'] == 62) | 
-                                                                          (info_viaje['geografico_id'] == 63)), 'puntos'] += 4
+                                                                          (info_viaje['geografico_id'] == 63)), 'puntos'] += 3.75
     #PUNTOS SI NO VIVEN EN ZONA DE COSTA PARA VIAJES DE COSTA
-    df_filtrado.loc[(df_filtrado['es_costa'] == False)&(info_viaje['es_costa']== True),'puntos'] += 5
+    df_filtrado.loc[(df_filtrado['es_costa'] == False)&(info_viaje['es_costa']== True),'puntos'] += 3.5
 
     # FILTRAR POR  DE CAPACIDAD VIAJE
     df_sorted = df_filtrado.sort_values(by='puntos', ascending=False)  # Para ordenar de más puntos a menos
