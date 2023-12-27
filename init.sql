@@ -92,23 +92,24 @@ values
 drop table if exists public.mes;
 create table if not exists public.mes(
 	mes_id serial primary key,
-	mes varchar(50) not null
+	mes varchar(50) not null,
+    cuatrimestre integer
 );
 
-insert into public.mes (mes)
+insert into public.mes (mes, cuatrimestre)
 values
-('Enero'),
-('Febrero'),
-('Marzo'),
-('Abril'),
-('Mayo'),
-('Junio'),
-('Julio'),
-('Agosto'),
-('Septiembre'),
-('Octubre'),
-('Noviembre'),
-('Diciembre');
+('Enero', 1),
+('Febrero', 1),
+('Marzo', 1),
+('Abril', 1),
+('Mayo', 2),
+('Junio', 2),
+('Julio', 2),
+('Agosto', 2),
+('Septiembre', 3),
+('Octubre', 3),
+('Noviembre', 3),
+('Diciembre', 3);
 
 --TABLA RESIDENCIA
 drop table if exists public.tipo_residencia;

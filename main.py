@@ -7,6 +7,7 @@ from unidecode import unidecode
 import numpy as np
 
 random.seed(42) #OBTENER LO MISMO SIEMRPE
+Faker.seed(43)
 
 # CONFIGURACIÓN
 fake = Faker('es_ES')  # Configura Faker para generar datos en español
