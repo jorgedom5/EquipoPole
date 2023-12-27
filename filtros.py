@@ -76,6 +76,7 @@ column_names = [desc[0] for desc in cur_target.description]
 # Crea el DataFrame con los datos y los nombres de las columnas
 jubilados_df = pd.DataFrame(list_of_rows, columns=column_names)
 print(jubilados_df)
+jubilados_df.to_csv('/app/jubilados.csv')
 jubilados_df['participacion_activa'] = False #VARIABLE PARA SABER SI HA PARTICIPADO ESTE AÑO
 jubilados_df['mes_ultimo_viaje'] = None 
 

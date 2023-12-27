@@ -122,66 +122,75 @@ def generar_discapacidad():
 # FUNCIÓN PARA CREAR LUGARES DONDE RESIDEN POR PORCENTAJES
 def generar_geografico():
     prob = fake.random_int(1, 100)
+    if prob <= 13.82:
+        # Regiones de Andalucía menos Sevilla (13.82%)
+        return fake.random_int(1, 7)
     if prob <= 17.82:
-        # Regiones de Andalucía
-        return fake.random_int(1, 8)
+        # SEVILLA (4%)
+        return 8
     elif prob <= 22.57:
-        # Regiones de Aragón
+        # Regiones de Aragón (4.75%)
         return fake.random_int(9, 11)
     elif prob <= 26.76:
-        # Regiones de Asturias
+        # Regiones de Asturias (4.19%)
         return fake.random_int(12, 13)
     elif prob <= 31.57:
-        # Regiones de Islas Baleares
+        # Regiones de Islas Baleares (4.81%)
         return fake.random_int(14, 17)
     elif prob <= 35.76:
-        # Regiones de Canarias
+        # Regiones de Canarias (4.19%)
         return fake.random_int(18, 21)
     elif prob <= 38.95:
-        # Regiones de Cantabria
+        # Regiones de Cantabria (3.19%)
         return 22
     elif prob <= 42.14:
-        # Regiones de Castilla-La Mancha
-        return fake.random_int(23, 26)
+        # Regiones de Castilla-La Mancha (3.19%)
+        return fake.random_int(23, 27)
     elif prob <= 46.03:
-        # Regiones de Castilla y León
-        return fake.random_int(28, 35)
+        # Regiones de Castilla y León (3.89%)
+        return fake.random_int(28, 36)
+    elif prob <= 55.78:
+        # BARCELONA (9.75%)
+        return 37
     elif prob <= 60.62:
-        # Regiones de Cataluña
-        return fake.random_int(37, 39)
-    elif prob <= 65.81:
-        # Regiones de Comunidad Valenciana
+        # Regiones de Cataluña (4.84%)
+        return fake.random_int(38, 40)
+    elif prob <= 63.81:
+        # Regiones de Comunidad Valenciana - VALENCIA (3.19%)
         return fake.random_int(41, 42)
-    elif prob <= 68.20:
-        # Regiones de Extremadura
-        return 44
-    elif prob <= 70.85:
-        # Regiones de Galicia
-        return fake.random_int(46, 48)
-    elif prob <= 72.14:
-        # Regiones de La Rioja
+    elif prob <= 69:
+        # VALENCIA (5.19%)
+        return 43
+    elif prob <= 71:
+        # Regiones de Extremadura (2%)
+        return fake.random_int(44, 45)
+    elif prob <= 76:
+        # Regiones de Galicia (4%)
+        return fake.random_int(46, 49)
+    elif prob <= 78.5:
+        # Regiones de La Rioja (3.5%)
         return 50
-    elif prob <= 84.95:
-        # Regiones de Comunidad de Madrid
+    elif prob <= 90:
+        # Regiones de Comunidad de Madrid (11.5%)
         return 51
-    elif prob <= 86.34:
-        # Regiones de Región de Murcia
-        return fake.random_int(52, 52)
-    elif prob <= 89.53:
-        # Regiones de Comunidad Foral de Navarra
+    elif prob <= 93:
+        # Regiones de Región de Murcia (3%)
+        return fake.random_int(52, 53)
+    elif prob <= 94.25:
+        # Regiones de Comunidad Foral de Navarra (2%)
         return 54
-    elif prob <= 92:
-        # Regiones de País Vasco
+    elif prob <= 98.25:
+        # Regiones de País Vasco (3.6%)
         return fake.random_int(55, 57)
-    elif prob <= 97:
+    elif prob <= 98.75:
         # Regiones de Ceuta
         return 58
-    elif prob <= 98:
+    elif prob <= 99.35:
         # Regiones de Melilla
         return 59
     else:
         # Regiones de Europa, América, África, Oceania
-        return fake.random_int(60, 63)  
+        return fake.random_int(60, 63) 
     
 # FUNCIÓN PARA CREAR ENFERMEDADES
 def generar_enfermedades():
