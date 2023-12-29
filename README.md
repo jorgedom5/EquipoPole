@@ -1,10 +1,10 @@
-# Red Bull Racing Team -- Data Project 1
+# RedHorn Journeys
 
 ## Viajes Imserso
 
 [![redbull-imserso.png](https://i.postimg.cc/1XMX575G/redbull-imserso.png)](https://postimg.cc/wRygwVNM)
 
-Welcome to the Red Bull Racing Team's winning project for Data Project 1! 🏎️🚀
+Welcome to the RedHorn Journeys Team's winning project for Data Project 1! 🏎️🚀
 
 ## Overview
 
@@ -13,36 +13,36 @@ PARA APLICAR ESTE MARAVILLOSO DATAPROJECT, CLONAR EL REPOSITORIO Y USAD:
 docker-compose up
 ```
 
-### Why Red Bull Racing Team?
+### Why RedHorn Journeys?
 
 1. **Proven Track Record in Data Analytics**
-   - Success in Formula 1 with a data-driven approach.
+   - Success in every project with a data-driven approach.
 
 2. **State-of-the-Art Technology Stack**
-   - Advanced tools, ML, and cloud infrastructure for efficient data handling.
+   - Leveraging advanced tools, machine learning, and cloud infrastructure for efficient and unbiased data handling.
 
 3. **Innovation and Continuous Improvement**
-   - Thriving on innovation for optimal outcomes.
+   - Thriving on innovation to ensure fair and optimal outcomes.
 
 4. **Cross-Disciplinary Team of Experts**
-   - Diverse experts ensuring a holistic approach to the IMSERSO Data Project.
+   - A diverse team of experts ensuring a holistic and equitable approach to the IMSERSO Data Project.
 
 5. **Commitment to Social Impact**
-   - Aligning values with community well-being.
+   - Aligning values with community well-being, particularly in the fair selection of retirees for the IMSERSO journey.
 
 ## Project Goals
 
 1. **Efficient Filtering:**
-   - Develop a robust system for IMSERSO group eligibility.
+   - Develop a robust and fair system for determining IMSERSO group eligibility.
 
 2. **User-Centric Design:**
-   - Ensure a friendly experience for users and administrators.
+   - Ensure a friendly and inclusive experience for both users and administrators.
 
 3. **Data Security and Privacy:**
-   - Implement measures for rigorous data protection.
+   - Implement measures for rigorous data protection, prioritizing equity and privacy.
 
 4. **Optimization Through Feedback:**
-   - Continuous improvement based on user feedback.
+   - Continuously improve the system based on comprehensive user feedback, promoting equity in the selection process.
 
 ### Technologies Used
 
@@ -57,19 +57,4 @@ docker-compose up
 ### SQL SCHEMA
 [![75d132b7-273b-4410-abdc-c6749266eb592.jpg](https://i.postimg.cc/4Nr8W2qP/75d132b7-273b-4410-abdc-c6749266eb592.jpg)](https://postimg.cc/ZCxFRHTv)
 
-## ESTRUCTURA JSON VIAJES
-```json
-{
-   "viajes_id":1,
-   "geografico_id":3,
-   "ciudad":"Cordoba",
-   "comunidad_autonoma":"Andalucia",
-   "es_costa":false,
-   "numero_plazas":12,
-   "numero_dias":7,
-   "mes":"Noviembre",
-   "transporte_pagado":false,
-   "residencia":"Casa rural",
-   "tipo_turismo":"Turismo de descanso"
-}
-```
+## MEDIA
