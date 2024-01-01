@@ -1,6 +1,6 @@
 # RedHorn Journeys
 
-[https://jorgedom5.github.io/RedHorn-Journeys/]
+https://jorgedom5.github.io/RedHorn-Journeys/
 
 ## Viajes Imserso
 
