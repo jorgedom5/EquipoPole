@@ -1,5 +1,7 @@
 # RedHorn Journeys
 
+[https://jorgedom5.github.io/RedHorn-Journeys/]
+
 ## Viajes Imserso
 
 [![redbull-imserso.png](https://i.postimg.cc/1XMX575G/redbull-imserso.png)](https://postimg.cc/wRygwVNM)
@@ -56,5 +58,3 @@ docker-compose up
 
 ### SQL SCHEMA
 [![75d132b7-273b-4410-abdc-c6749266eb592.jpg](https://i.postimg.cc/4Nr8W2qP/75d132b7-273b-4410-abdc-c6749266eb592.jpg)](https://postimg.cc/ZCxFRHTv)
-
-## MEDIA
