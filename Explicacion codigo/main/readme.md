@@ -51,6 +51,13 @@ La sentencia DROP TABLE IF EXISTS se utiliza para eliminar la tabla si ya existe
 El mismo enfoque se utiliza para la creación de la tabla viajes.
 ### Generación de datos ficticios:
 En estas secciones, se utilizan bucles for para iterar sobre una cantidad determinada de veces y se generan datos ficticios utilizando las funciones previamente definidas (generar_datos_jubilados y generar_datos_viajes). Los datos generados se insertan en las tablas jubilados y viajes de la base de datos.
+Para hacer la tabla jubilados usamos la siguientes librerías para:
+1. **Generación de un Nombre con Acentos:**  
+- `nombre_con_acentos = fake.first_name()`: Utiliza la biblioteca `fake` (probablemente Faker) para generar un nombre ficticio con acentos y lo asigna a la variable `nombre_con_acentos`. 
+2. **Eliminación de Acentos del Nombre:**  
+- `nombre_sin_acentos = unidecode(nombre_con_acentos)`: Utiliza la función `unidecode` para convertir el nombre con acentos en un nombre sin acentos. Esto puede ser útil para normalizar el nombre y eliminar caracteres especiales. 
+3. **Determinación del Género:**  
+- `genero = gender_detector.get_gender(nombre_sin_acentos)`: Utiliza una función `get_gender` del objeto `gender_detector` para determinar el género del jubilado basándose en el nombre sin acentos. Es posible que `gender_detector` sea una biblioteca o módulo que utiliza algoritmos para inferir el género a partir del nombre.
 ### Configuración de claves foráneas:
 En esta sección, se ejecutan comandos SQL para establecer restricciones de clave foránea entre las tablas. Las claves foráneas aseguran la integridad referencial de la base de datos, estableciendo relaciones entre campos de diferentes tablas. Por ejemplo, la tabla jubilados tiene una clave foránea (geografico_id) que referencia la columna geografico_id en la tabla geografico.
 ### Commit y cierre de la conexión:
