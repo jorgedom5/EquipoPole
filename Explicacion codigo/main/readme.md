@@ -53,7 +53,7 @@ El mismo enfoque se utiliza para la creación de la tabla viajes.
 En estas secciones, se utilizan bucles for para iterar sobre una cantidad determinada de veces y se generan datos ficticios utilizando las funciones previamente definidas (generar_datos_jubilados y generar_datos_viajes). Los datos generados se insertan en las tablas jubilados y viajes de la base de datos.
 Para hacer la tabla jubilados usamos la siguientes librerías para:
 1. **Generación de un Nombre con Acentos:**  
-- `nombre_con_acentos = fake.first_name()`: Utiliza la biblioteca `fake` (probablemente Faker) para generar un nombre ficticio con acentos y lo asigna a la variable `nombre_con_acentos`. 
+- `nombre_con_acentos = fake.first_name()`: Utiliza la biblioteca `fake` para generar un nombre ficticio con acentos y lo asigna a la variable `nombre_con_acentos`. 
 2. **Eliminación de Acentos del Nombre:**  
 - `nombre_sin_acentos = unidecode(nombre_con_acentos)`: Utiliza la función `unidecode` para convertir el nombre con acentos en un nombre sin acentos. Esto puede ser útil para normalizar el nombre y eliminar caracteres especiales. 
 3. **Determinación del Género:**  
