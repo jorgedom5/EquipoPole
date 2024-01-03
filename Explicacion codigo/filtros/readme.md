@@ -57,11 +57,47 @@ viajes_df = pd.DataFrame(rows, columns=[desc[0] for desc in cur_target.descripti
 resultados_viajes = {}  # Diccionario para almacenar resultados de los viajes
 ```
 ### Bucle para Filtrar y Calcular Puntos:
+#### ÚLTIMO FILTRADO DF
 ```python
+# Iterar a través de filas en el DataFrame de viajes
 for viaje, fila_aleatoria in viajes_df.iterrows():
-    # ... (filtrado y cálculo de puntos)
+    print(f'analizando viaje {viaje + 1}')
+
+    # Paso 1: Obtener el valor de geografico_id del viaje actual
+    geografico_id_aleatorio = fila_aleatoria['geografico_id']
+    mes_viaje_aleatorio = fila_aleatoria['mes']
+
+    # Paso 2: Convertir la fila actual a un diccionario (info_viaje) para facilitar el acceso a los valores
+    info_viaje = fila_aleatoria.to_dict()
+
+    # Paso 3: Filtrar el DataFrame jubilados_df
+    # - Seleccionar jubilados que no viven en el mismo lugar (geografico_id diferente)
+    # - Eliminar aquellos que han viajado en el mismo mes
+    df_filtrado = jubilados_df[
+        (jubilados_df['geografico_id'] != geografico_id_aleatorio) &
+        (jubilados_df['mes_ultimo_viaje'] != mes_viaje_aleatorio)
+    ]
 ```
+Explicación detallada: 
+1. **Iteración sobre Filas:**  El código utiliza un bucle `for` para iterar sobre las filas del DataFrame `viajes_df`. Cada iteración representa un viaje. 
+2. **Impresión del Análisis del Viaje:**  Imprime un mensaje indicando que se está analizando un viaje específico, utilizando el índice del viaje más 1 (`viaje + 1`). 
+3. **Obtención de Valores del Viaje Actual:**  
+- `geografico_id_aleatorio`: Obtiene el valor de la columna `'geografico_id'` de la fila actual del DataFrame `viajes_df`. 
+- `mes_viaje_aleatorio`: Obtiene el valor de la columna `'mes'` de la fila actual del DataFrame `viajes_df`. 
+4. **Creación de un Diccionario con la Información del Viaje:**  
+- `info_viaje`: Convierte la fila actual del DataFrame `viajes_df` en un diccionario. Esto facilita el acceso a los valores de la fila para su posterior uso. 
+5. **Filtrado del DataFrame de Jubilados:**  
+- `df_filtrado`: Filtra el DataFrame `jubilados_df`:
+- Selecciona jubilados que no viven en el mismo lugar (geografico_id diferente).
+- Elimina aquellos que han viajado en el mismo mes que el viaje actual.
 Se itera a través de los viajes y se aplican una serie de filtros y cálculos de puntos a los jubilados.
+#### SUMA DE PUNTOS
+1. **Creación de la Columna 'puntos':**  
+- `df_filtrado['puntos'] = 0.0`: Se crea una nueva columna llamada 'puntos' en el DataFrame `df_filtrado` y se le asigna el valor inicial de 0.0 para todas las filas. Esto significa que inicialmente, todos los jubilados en el DataFrame tienen 0.0 puntos. 
+2. **Cambio del Tipo de Datos a Decimal:**  
+- `df_filtrado['puntos'] = df_filtrado['puntos'].astype(float)`: Se realiza una conversión explícita del tipo de datos de la columna 'puntos' a punto flotante (`float`). Aunque inicialmente se asignó un valor decimal (0.0), este paso asegura que la columna esté explícitamente configurada como un tipo de dato decimal, lo cual puede ser útil en operaciones matemáticas y cálculos que involucren esta columna.
+3. **Suma y resta de puntos según características**
+
 ### Guardado de Resultados en JSON:
 ```python
 # Paso 1: Obtener la capacidad del viaje a partir del diccionario info_viaje
