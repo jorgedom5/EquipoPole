@@ -64,10 +64,38 @@ for viaje, fila_aleatoria in viajes_df.iterrows():
 Se itera a través de los viajes y se aplican una serie de filtros y cálculos de puntos a los jubilados.
 ### Guardado de Resultados en JSON:
 ```python
-json_path = '/app/resultados_viajes.json'
-with open(json_path, 'w') as json_file:
-    json.dump(resultados_viajes, json_file)
+# Paso 1: Obtener la capacidad del viaje a partir del diccionario info_viaje
+capacidad_viaje = info_viaje['numero_plazas']
+
+# Paso 2: Seleccionar a los abuelos (jubilados) para el viaje basándose en la capacidad
+abuelos_seleccionados = df_sorted.head(capacidad_viaje)
+
+# Paso 3: Marcar a los jubilados seleccionados como participantes activos
+jubilados_df.loc[jubilados_df['jubilado_id'].isin(abuelos_seleccionados['jubilado_id']), 'participacion_activa'] = True
+
+# Paso 4: Establecer el mes del último viaje para los jubilados seleccionados
+jubilados_df.loc[jubilados_df['jubilado_id'].isin(abuelos_seleccionados['jubilado_id']), 'mes_ultimo_viaje'] = mes_viaje_aleatorio
+
+# Paso 5: Imprimir los abuelos seleccionados (posiblemente para revisión o seguimiento)
+print(abuelos_seleccionados)
+
+# Paso 6: Crear un diccionario con la información del viaje y los participantes seleccionados
+info_viaje_dict = info_viaje.copy()
+resultados_viajes[f'viaje_{viaje + 1}'] = {
+    "info_viaje": info_viaje_dict,
+    "participantes": abuelos_seleccionados.to_dict(orient='records')
+}
 ```
+
+
+
+Explicación detallada: 
+1. **Capacidad del Viaje:**  Se obtiene la capacidad del viaje desde el diccionario `info_viaje` utilizando la clave `'numero_plazas'`. 
+2. **Selección de Abuelos:**  Selecciona a los abuelos (jubilados) para el viaje basándose en la capacidad del viaje. Esto se realiza utilizando el método `head` del DataFrame `df_sorted`, que probablemente contiene información sobre los jubilados ordenados de alguna manera. 
+3. **Marca de Participación Activa:**  Marca a los jubilados seleccionados como participantes activos. Esto se logra modificando la columna `'participacion_activa'` en el DataFrame `jubilados_df`. 
+4. **Registro del Mes del Último Viaje:**  Registra el mes del último viaje para los jubilados seleccionados. Esto se realiza modificando la columna `'mes_ultimo_viaje'` en el DataFrame `jubilados_df` con el valor de la variable `mes_viaje_aleatorio`. 
+5. **Impresión de Abuelos Seleccionados:**  Imprime la información de los abuelos seleccionados, posiblemente para visualizar o verificar. 
+6. **Registro de Resultados del Viaje:**  Crea un diccionario llamado `resultados_viajes` que contiene la información del viaje (`info_viaje_dict`) y los participantes seleccionados (`abuelos_seleccionados`) en el formato específico. La clave del diccionario es una cadena que incluye el número del viaje.
 Los resultados del análisis se guardan en un archivo JSON.
 
 
