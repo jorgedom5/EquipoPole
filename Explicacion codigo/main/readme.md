@@ -57,7 +57,7 @@ Para hacer la tabla jubilados usamos la siguientes librerías para:
 2. **Eliminación de Acentos del Nombre:**  
 - `nombre_sin_acentos = unidecode(nombre_con_acentos)`: Utiliza la función `unidecode` para convertir el nombre con acentos en un nombre sin acentos. Esto puede ser útil para normalizar el nombre y eliminar caracteres especiales. 
 3. **Determinación del Género:**  
-- `genero = gender_detector.get_gender(nombre_sin_acentos)`: Utiliza una función `get_gender` del objeto `gender_detector` para determinar el género del jubilado basándose en el nombre sin acentos. Es posible que `gender_detector` sea una biblioteca o módulo que utiliza algoritmos para inferir el género a partir del nombre.
+- `genero = gender_detector.get_gender(nombre_sin_acentos)`: Utiliza una función `get_gender` del objeto `gender_detector` para determinar el género del jubilado basándose en el nombre sin acentos, `gender_detector` es una biblioteca que utiliza algoritmos para inferir el género a partir del nombre.
 ### Configuración de claves foráneas:
 En esta sección, se ejecutan comandos SQL para establecer restricciones de clave foránea entre las tablas. Las claves foráneas aseguran la integridad referencial de la base de datos, estableciendo relaciones entre campos de diferentes tablas. Por ejemplo, la tabla jubilados tiene una clave foránea (geografico_id) que referencia la columna geografico_id en la tabla geografico.
 ### Commit y cierre de la conexión:
