@@ -31,6 +31,7 @@ Para completar el lugar de residencia de los jubilados necesitamos saber tambié
 Fuente: https://www.ine.es/prensa/pere_2023.pd
 
 ### Estado civil:
+https://www.ine.es/jaxiT3/Tabla.htm?L=0&t=4031
 ### Discapacidad:
 https://www.ine.es/jaxi/Tabla.htm?L=0&tpx=8544
 https://www.ine.es/jaxi/Tabla.htm?tpx=51615&L=0
