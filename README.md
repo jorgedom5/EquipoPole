@@ -4,7 +4,7 @@ https://jorgedom5.github.io/RedHorn-Journeys/
 
 ## Viajes Imserso
 
-[![redbull-imserso.png](https://i.postimg.cc/1XMX575G/redbull-imserso.png)](https://postimg.cc/wRygwVNM)
+<a href="https://postimg.cc/wRygwVNM" target="_blank"><img src="https://i.postimg.cc/1XMX575G/redbull-imserso.png" alt="redbull-imserso.png" width="400"/></a>
 
 Welcome to the RedHorn Journeys Team's winning project for Data Project 1! 🏎️🚀
 
