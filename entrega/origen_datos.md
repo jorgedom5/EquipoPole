@@ -32,7 +32,6 @@ Fuente: https://www.ine.es/prensa/pere_2023.pd
 
 ### Estado civil:
 ### Pensión anual:
-### Años tributados:
 ### Discapacidad:
 ### Enfermedades:
 ### Propiedades:
