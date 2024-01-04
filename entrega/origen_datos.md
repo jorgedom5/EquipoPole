@@ -33,6 +33,7 @@ Fuente: https://www.ine.es/prensa/pere_2023.pd
 ### Estado civil:
 ### Pensión anual:
 ### Discapacidad:
+https://www.ine.es/jaxi/Tabla.htm?L=0&tpx=8544
 ### Enfermedades:
 ### Propiedades:
 https://www.bankinter.com/blog/finanzas-personales/propietarios-mas-dos-viviendas
