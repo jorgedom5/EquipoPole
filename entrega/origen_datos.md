@@ -37,6 +37,7 @@ Fuente: https://www.ine.es/prensa/pere_2023.pd
 ### Propiedades:
 https://www.bankinter.com/blog/finanzas-personales/propietarios-mas-dos-viviendas
 ### Endeudamiento:
+https://www.ine.es/ss/Satellite?L=es_ES&c=INESeccion_C&cid=1259944566136&p=1254735110672&pagename=ProductosYServicios%2FPYSLayout&param1=PYSDetalleFichaIndicador&param3=1259937499084
 ### Participación en un voluntariado:
 https://plataformavoluntariado.org/el-voluntariado-alcanza-una-cifra-record-en-2022/
 
