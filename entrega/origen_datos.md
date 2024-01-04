@@ -35,6 +35,7 @@ Fuente: https://www.ine.es/prensa/pere_2023.pd
 ### Discapacidad:
 ### Enfermedades:
 ### Propiedades:
+https://www.bankinter.com/blog/finanzas-personales/propietarios-mas-dos-viviendas
 ### Endeudamiento:
 ### Participación en un voluntariado:
 https://plataformavoluntariado.org/el-voluntariado-alcanza-una-cifra-record-en-2022/
