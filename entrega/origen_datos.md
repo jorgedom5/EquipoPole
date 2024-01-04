@@ -32,14 +32,20 @@ Fuente: https://www.ine.es/prensa/pere_2023.pd
 
 ### Estado civil:
 https://www.ine.es/jaxiT3/Tabla.htm?L=0&t=4031
+
 ### Discapacidad:
 https://www.ine.es/jaxi/Tabla.htm?L=0&tpx=8544
 https://www.ine.es/jaxi/Tabla.htm?tpx=51615&L=0
+
 ### Enfermedades:
+https://www.ine.es/jaxi/Tabla.htm?path=/t15/p420/a2019/p01/l0/&file=01001.px&L=0
+
 ### Propiedades:
 https://www.bankinter.com/blog/finanzas-personales/propietarios-mas-dos-viviendas
+
 ### Endeudamiento:
 https://www.ine.es/ss/Satellite?L=es_ES&c=INESeccion_C&cid=1259944566136&p=1254735110672&pagename=ProductosYServicios%2FPYSLayout&param1=PYSDetalleFichaIndicador&param3=1259937499084
+
 ### Participación en un voluntariado:
 https://plataformavoluntariado.org/el-voluntariado-alcanza-una-cifra-record-en-2022/
 
