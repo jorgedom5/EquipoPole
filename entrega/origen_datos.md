@@ -9,7 +9,7 @@ Fuente: https://datosmacro.expansion.com/demografia/estructura-poblacion/espana
 ### Historial:
 Para analizar los porcentajes de individuos que cometen delitos y el tipo de delito, hemos compilado una lista que incluye los delitos asociados con cada categoría.
 
-![Alt text](historial.png)
+![Alt text](./img/tipos_historial.png)
 
 Posteriormente, utilizando datos específicos para cada tipo de delito, hemos calculado los porcentajes correspondientes.
 Fuente: https://www.ine.es/jaxiT3/Datos.htm?t=25997
@@ -29,3 +29,13 @@ Fuente: https://www.seg-social.es/wps/wcm/connect/wss/a59fc4a1-faa7-48dd-9a0e-a2
 ### Pensionistas que no residen en España:
 Para completar el lugar de residencia de los jubilados necesitamos saber también el porcentaje de miembros que no residen en España 
 Fuente: https://www.ine.es/prensa/pere_2023.pd
+
+### Estado civil:
+### Pensión anual:
+### Años tributados:
+### Discapacidad:
+### Enfermedades:
+### Propiedades:
+### Endeudamiento:
+### Participación en un voluntariado:
+
