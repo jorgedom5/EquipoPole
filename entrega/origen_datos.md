@@ -1,23 +1,31 @@
--   **Delincuencia (Fuente: Statista):**
-    
-    Statista es una plataforma reconocida que recopila y presenta estadísticas de diversas fuentes confiables.
+# ORIGEN DE LOS DATOS
 
--   **Cantidad de plazas disponibles (Fuente: La Información):**
-    
-    La Información es un medio de comunicación respetado que proporciona datos sobre diversas temáticas, incluyendo turismo.
+## TABLA JUBILADOS
 
--   **Valoración de las solicitudes en el programa de turismo IMSERSO (Fuente: IMSERSO):**
-    
-    IMSERSO es la entidad responsable del programa de turismo dirigido a personas mayores en España.
+### Edad:
+Para obtener información relacionada con la edad de los jubilados, hemos examinado la distribución de edades en la población real, asignando un peso equivalente a estas edades en nuestro grupo de jubilados.
+Fuente: https://datosmacro.expansion.com/demografia/estructura-poblacion/espana
 
--   **Pensionistas por comunidad (Fuente: Seguridad Social):**
-    
-    La Seguridad Social es una fuente oficial que proporciona datos sobre pensionistas, lo que es crucial para comprender la distribución demográfica y económica de esta población.
+### Historial:
+Para analizar los porcentajes de individuos que cometen delitos y el tipo de delito, hemos compilado una lista que incluye los delitos asociados con cada categoría.
 
--   **Porcentajes de hijos y fumadores (Fuente: INE):**
-    
-    El Instituto Nacional de Estadística (INE) es una entidad gubernamental que recopila datos estadísticos oficiales.
+![Alt text](historial.png)
 
--   **Porcentaje de lugar de residencia (Fuente: INE):**
-    
-    La fuente del INE proporciona datos sobre el lugar de residencia, lo cual es esencial para comprender la distribución geográfica de la población.
+Posteriormente, utilizando datos específicos para cada tipo de delito, hemos calculado los porcentajes correspondientes.
+Fuente: https://www.ine.es/jaxiT3/Datos.htm?t=25997
+
+### Hijos:
+Para calcular el número de hijos en cada familia de jubilados, hemos consultado datos reales proporcionados por el Instituto Nacional de Estadística (INE). Hemos considerado los datos de las personas mayores de 50 años.
+Fuente: https://www.ine.es/jaxi/Datos.htm?path=/t20/p317/a2018/def/p01/e01/l0/&file=01001.px
+
+### Fumador: 
+Para identificar a los fumadores, hemos accedido a los datos proporcionados por el Instituto Nacional de Estadística (INE) y calculado el porcentaje de personas mayores de 58 años que son fumadores.
+Fuente:  https://www.ine.es/jaxi/Datos.htm?path=/t00/mujeres_hombres/tablas_1/l0/&file=d07001.px
+
+### Pensionistas por comunidad:
+Para determinar la cantidad de pensionistas que habrá en cada comunidad, hemos empleado datos reales que reflejan la distribución en la tabla de jubilados.
+Fuente: https://www.seg-social.es/wps/wcm/connect/wss/a59fc4a1-faa7-48dd-9a0e-a20302891ae3/PTAS202311.pdf?MOD=AJPERES&CONVERT_TO=linktext&CACHEID=ROOTWORKSPACE.Z18_2G50H38209D640QTQ57OVB2000-a59fc4a1-faa7-48dd-9a0e-a20302891ae3-oMvfwOj
+
+### Pensionistas que no residen en España:
+Para completar el lugar de residencia de los jubilados necesitamos saber también el porcentaje de miembros que no residen en España 
+Fuente: https://www.ine.es/prensa/pere_2023.pd
